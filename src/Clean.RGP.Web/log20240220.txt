@@ -1,0 +1,77 @@
+2024-02-20 14:11:40.117 +02:00 [INF] Registered 5 endpoints in 1923 milliseconds.
+2024-02-20 14:11:41.789 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-02-20 14:11:41.845 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "Status" INTEGER NOT NULL
+);
+2024-02-20 14:11:41.987 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-20 14:11:42.023 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name", "c"."Status"
+FROM "Contributors" AS "c"
+2024-02-20 14:11:42.122 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 7), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-20 14:11:42.138 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 8), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-20 14:11:42.266 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 14:11:42.267 +02:00 [INF] Hosting environment: Development
+2024-02-20 14:11:42.267 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-20 14:11:42.351 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-20 14:11:43.075 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-20 14:11:43.092 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 747.768ms
+2024-02-20 14:11:43.229 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 153.6827ms
+2024-02-20 14:11:43.236 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui.css - null null
+2024-02-20 14:11:43.243 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-20 14:11:43.243 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.css - null null
+2024-02-20 14:11:43.243 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui-bundle.js - null null
+2024-02-20 14:11:43.271 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-20 14:11:43.272 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-20 14:11:43.281 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.1495ms
+2024-02-20 14:11:43.311 +02:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-02-20 14:11:43.311 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-20 14:11:43.311 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-20 14:11:43.311 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.css - 200 218 text/css 67.8733ms
+2024-02-20 14:11:43.312 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui.css - 200 151213 text/css 77.6188ms
+2024-02-20 14:11:43.320 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui-standalone-preset.js - 200 230642 text/javascript 49.2671ms
+2024-02-20 14:11:43.327 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-20 14:11:43.352 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/swagger-ui-bundle.js - 200 1385018 text/javascript 109.3233ms
+2024-02-20 14:11:43.800 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/favicon-32x32.png - null null
+2024-02-20 14:11:43.800 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-20 14:11:43.800 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 556.8173ms
+2024-02-20 14:11:43.801 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-20 14:11:43.802 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/favicon-32x32.png - 200 628 image/png 1.8042ms
+2024-02-20 14:11:43.843 +02:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-02-20 14:11:44.447 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 647.6192ms
+2024-02-20 14:12:56.421 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/Contributors/1 - null null
+2024-02-20 14:12:56.426 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-20 14:12:56.432 +02:00 [INF] Executing endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2024-02-20 14:12:56.654 +02:00 [INF] Handling GetContributorQuery
+2024-02-20 14:12:56.654 +02:00 [INF] Property ContributorId : 1
+2024-02-20 14:12:56.780 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__contributorId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name", "c"."Status"
+FROM "Contributors" AS "c"
+WHERE "c"."Id" = @__contributorId_0
+LIMIT 1
+2024-02-20 14:12:56.787 +02:00 [INF] Handled GetContributorQuery with Ardalis.Result.Result`1[Clean.RGP.UseCases.Contributors.ContributorDTO] in 132 ms
+2024-02-20 14:12:56.807 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors/{ContributorId:int}'
+2024-02-20 14:12:56.811 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors/1 - 200 null application/json 389.6331ms
+2024-02-20 14:13:32.812 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/Contributors - application/json 21
+2024-02-20 14:13:32.812 +02:00 [INF] Executing endpoint 'HTTP: POST /Contributors'
+2024-02-20 14:13:32.834 +02:00 [INF] Handling CreateContributorCommand
+2024-02-20 14:13:32.834 +02:00 [INF] Property Name : Peter
+2024-02-20 14:13:32.840 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 5), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Contributors" ("Name", "Status")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2024-02-20 14:13:32.856 +02:00 [INF] Handled CreateContributorCommand with Ardalis.Result.Result`1[System.Int32] in 21 ms
+2024-02-20 14:13:32.858 +02:00 [INF] Executed endpoint 'HTTP: POST /Contributors'
+2024-02-20 14:13:32.859 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/Contributors - 200 null application/json 47.2478ms
