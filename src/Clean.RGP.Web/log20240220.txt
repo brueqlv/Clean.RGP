@@ -227,3 +227,80 @@ FROM (
 2024-02-20 16:19:50.967 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 126 ms
 2024-02-20 16:19:50.993 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
 2024-02-20 16:19:50.997 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors - 200 null application/json 227.0771ms
+2024-02-20 16:21:20.735 +02:00 [INF] Registered 5 endpoints in 524 milliseconds.
+2024-02-20 16:21:21.409 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-20 16:21:21.554 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-20 16:21:21.659 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 16:21:21.660 +02:00 [INF] Hosting environment: Development
+2024-02-20 16:21:21.660 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-20 16:21:21.735 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-20 16:21:22.047 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-20 16:21:22.056 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 324.6673ms
+2024-02-20 16:21:22.659 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 611.0414ms
+2024-02-20 16:21:22.661 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-20 16:21:22.662 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-20 16:21:22.667 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.6733ms
+2024-02-20 16:21:22.728 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.5006ms
+2024-02-20 16:21:22.764 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-20 16:21:22.776 +02:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-02-20 16:21:23.478 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 714.8121ms
+2024-02-20 16:21:46.348 +02:00 [INF] Registered 5 endpoints in 575 milliseconds.
+2024-02-20 16:21:47.222 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-20 16:21:47.409 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-20 16:21:47.616 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 16:21:47.617 +02:00 [INF] Hosting environment: Development
+2024-02-20 16:21:47.617 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-20 16:21:47.660 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-20 16:21:47.957 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-20 16:21:47.966 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 312.1136ms
+2024-02-20 16:21:48.146 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 189.6217ms
+2024-02-20 16:21:48.162 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-20 16:21:48.166 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-20 16:21:48.170 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 8.3988ms
+2024-02-20 16:21:48.229 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.7626ms
+2024-02-20 16:21:48.262 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-20 16:21:48.274 +02:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-02-20 16:21:48.969 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 707.3396ms
+2024-02-20 16:26:18.705 +02:00 [INF] Registered 5 endpoints in 2654 milliseconds.
+2024-02-20 16:26:22.824 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-20 16:26:23.137 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-20 16:26:23.303 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-20 16:26:23.303 +02:00 [INF] Hosting environment: Development
+2024-02-20 16:26:23.304 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-20 16:26:23.369 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-20 16:26:23.633 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-20 16:26:23.659 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 298.3315ms
+2024-02-20 16:26:23.877 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 243.9226ms
+2024-02-20 16:26:23.892 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-20 16:26:23.897 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-20 16:26:23.902 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 10.7826ms
+2024-02-20 16:26:23.960 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.5277ms
+2024-02-20 16:26:24.015 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-20 16:26:24.073 +02:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-02-20 16:26:24.920 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 904.8623ms
+2024-02-20 16:26:27.074 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/Contributors - null null
+2024-02-20 16:26:27.078 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-20 16:26:27.084 +02:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2024-02-20 16:26:27.126 +02:00 [INF] Handling ListContributorsQuery
+2024-02-20 16:26:27.127 +02:00 [INF] Property Skip : null
+2024-02-20 16:26:27.128 +02:00 [INF] Property Take : null
+2024-02-20 16:26:27.246 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-20 16:26:27.253 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 125 ms
+2024-02-20 16:26:27.281 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2024-02-20 16:26:27.285 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors - 200 null application/json 211.4631ms
