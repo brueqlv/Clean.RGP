@@ -2,7 +2,6 @@
 using Clean.RGP.Core.ContributorAggregate;
 using Clean.RGP.Core.Interfaces;
 using Ardalis.SharedKernel;
-using MediatR;
 using Microsoft.Extensions.Logging;
 
 namespace Clean.RGP.Core.Services;
