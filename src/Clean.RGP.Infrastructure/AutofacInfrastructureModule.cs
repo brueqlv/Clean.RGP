@@ -3,6 +3,8 @@ using Ardalis.SharedKernel;
 using Autofac;
 using Clean.RGP.Core.ContributorAggregate;
 using Clean.RGP.Core.Interfaces;
+using Clean.RGP.Core.PersonAggregate;
+using Clean.RGP.Core.Services;
 using Clean.RGP.Infrastructure.Data;
 using Clean.RGP.Infrastructure.Data.Queries;
 using Clean.RGP.Infrastructure.Email;
@@ -44,9 +46,19 @@ public class AutofacInfrastructureModule : Module
     var infrastructureAssembly = Assembly.GetAssembly(typeof(AutofacInfrastructureModule));
     var useCasesAssembly = Assembly.GetAssembly(typeof(CreateContributorCommand));
 
+    var personAssembly = Assembly.GetAssembly(typeof(Person));
+    var landPropertyAssembly = Assembly.GetAssembly(typeof(LandProperty));
+    var plotAssembly = Assembly.GetAssembly(typeof(Plot));
+    var landTypeAssembly = Assembly.GetAssembly(typeof(LandType));
+
     AddToAssembliesIfNotNull(coreAssembly);
     AddToAssembliesIfNotNull(infrastructureAssembly);
     AddToAssembliesIfNotNull(useCasesAssembly);
+
+    AddToAssembliesIfNotNull(personAssembly);
+    AddToAssembliesIfNotNull(landPropertyAssembly);
+    AddToAssembliesIfNotNull(plotAssembly);
+    AddToAssembliesIfNotNull(landTypeAssembly);
   }
 
   protected override void Load(ContainerBuilder builder)
@@ -78,6 +90,26 @@ public class AutofacInfrastructureModule : Module
     builder.RegisterType<ListContributorsQueryService>()
       .As<IListContributorsQueryService>()
       .InstancePerLifetimeScope();
+
+    //builder.RegisterType<AddNewPersonService>()
+    //  .As<IAddNewPersonService>()
+    //  .InstancePerLifetimeScope();
+
+    //builder.RegisterType<DeletePersonByIdService>()
+    //  .As<IDeletePersonByIdService>()
+    //  .InstancePerLifetimeScope();
+
+    //builder.RegisterType<EditPersonByIdService>()
+    //  .As<IEditPersonByIdService>()
+    //  .InstancePerLifetimeScope();
+
+    //builder.RegisterType<GetAllPeopleListService>()
+    //  .As<IGetAllPeopleListService>()
+    //  .InstancePerLifetimeScope();
+
+    //builder.RegisterType<GetPersonByIdService>()
+    //  .As<IGetPersonByIdService>()
+    //  .InstancePerLifetimeScope();
   }
 
   private void RegisterMediatR(ContainerBuilder builder)

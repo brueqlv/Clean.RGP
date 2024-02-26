@@ -7,7 +7,7 @@ public class Person : EntityBase, IAggregateRoot
   public string Name { get; set; } = string.Empty;
   public string PersonalCodeOrRegistrationNumber { get; set; } = string.Empty;
   public Enums.Enums.PersonTypeEnum PersonType { get; set; }
-  public List<LandProperty> LandProperties { get; set; } = new List<LandProperty>();
+  public List<LandProperty> LandProperties { get; set; } = [];
 
   public void UpdateFrom(Person updatedPerson)
   {

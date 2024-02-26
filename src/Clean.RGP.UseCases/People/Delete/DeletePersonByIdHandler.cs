@@ -2,7 +2,7 @@
 using Ardalis.SharedKernel;
 using Clean.RGP.Core.Interfaces;
 
-namespace Clean.RGP.UseCases.Contributors.Delete;
+namespace Clean.RGP.UseCases.People.Delete;
 public class DeletePersonByIdHandler(IDeletePersonByIdService _deletePersonByIdService)
   : ICommandHandler<DeletePersonByIdCommand, Result>
 {

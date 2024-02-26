@@ -7,6 +7,7 @@ using Clean.RGP.Infrastructure;
 using Clean.RGP.Infrastructure.Data;
 using FastEndpoints;
 using FastEndpoints.Swagger;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
 builder.Host.UseSerilog((_, config) => config.ReadFrom.Configuration(builder.Configuration));
+
+builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
@@ -48,6 +51,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 });
 
 var app = builder.Build();
+app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment())
 {
@@ -59,6 +63,11 @@ else
   app.UseDefaultExceptionHandler(); // from FastEndpoints
   app.UseHsts();
 }
+
+app.MapControllerRoute(
+  name: "default",
+  pattern: "{controller=RGP}/{action=Index}/{id?}");
+
 app.UseFastEndpoints();
 app.UseSwaggerGen(); // FastEndpoints middleware
 
@@ -76,7 +85,7 @@ static void SeedDatabase(WebApplication app)
   try
   {
     var context = services.GetRequiredService<AppDbContext>();
-    //                    context.Database.Migrate();
+    //               context.Database.Migrate();
     context.Database.EnsureCreated();
     SeedData.Initialize(services);
   }

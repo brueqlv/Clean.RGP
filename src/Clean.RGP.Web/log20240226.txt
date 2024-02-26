@@ -1,0 +1,819 @@
+2024-02-26 13:14:28.706 +02:00 [INF] Registered 5 endpoints in 2391 milliseconds.
+2024-02-26 13:14:30.833 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 13:14:31.046 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 13:14:31.206 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 13:14:31.423 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 13:14:31.424 +02:00 [INF] Hosting environment: Development
+2024-02-26 13:14:31.424 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 13:14:31.561 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 13:14:31.796 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 13:14:31.804 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 249.3517ms
+2024-02-26 13:14:31.990 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 193.8337ms
+2024-02-26 13:14:32.000 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 13:14:32.004 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 13:14:32.007 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 7.5531ms
+2024-02-26 13:14:34.256 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 2251.8485ms
+2024-02-26 13:14:34.288 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 13:14:34.908 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 620.1844ms
+2024-02-26 13:14:40.183 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/Contributors - null null
+2024-02-26 13:14:40.188 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 13:14:40.190 +02:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2024-02-26 13:14:40.247 +02:00 [INF] Handling ListContributorsQuery
+2024-02-26 13:14:40.247 +02:00 [INF] Property Skip : null
+2024-02-26 13:14:40.248 +02:00 [INF] Property Take : null
+2024-02-26 13:14:40.374 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-26 13:14:40.384 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 136 ms
+2024-02-26 13:14:40.414 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2024-02-26 13:14:40.418 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors - 200 null application/json 234.7906ms
+2024-02-26 13:14:48.381 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 13:14:48.386 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 13:14:48.405 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 13:14:48.416 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 13:14:48.418 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 13:14:48.477 +02:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 13:14:48.526 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 14:03:33.314 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:03:33.372 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2024-02-26 14:03:33.373 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:03:33.374 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:04:44.347 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:04:44.372 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:04:44.378 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:04:44.385 +02:00 [INF] No migrations were applied. The database is already up to date.
+2024-02-26 14:27:53.400 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:27:53.430 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:27:53.439 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:29:08.302 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:29:08.326 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:29:08.332 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:31:04.800 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:31:04.823 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:31:04.829 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:31:11.951 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:31:11.977 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:31:11.983 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:32:39.356 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:32:39.386 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:32:39.394 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:32:39.404 +02:00 [INF] Applying migration '20240226123224_AddNewEntities'.
+2024-02-26 14:32:39.449 +02:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL
+);
+2024-02-26 14:45:09.339 +02:00 [INF] Registered 5 endpoints in 2296 milliseconds.
+2024-02-26 14:45:11.099 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 14:45:11.305 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 14:45:11.387 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 14:45:11.535 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 14:45:11.536 +02:00 [INF] Hosting environment: Development
+2024-02-26 14:45:11.544 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 14:45:11.581 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 14:45:11.752 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 14:45:11.762 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 187.0454ms
+2024-02-26 14:45:11.891 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 139.1214ms
+2024-02-26 14:45:11.900 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 14:45:11.904 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 14:45:11.909 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 10.403ms
+2024-02-26 14:45:11.958 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.1615ms
+2024-02-26 14:45:11.990 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 14:45:12.568 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 577.864ms
+2024-02-26 14:45:18.360 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/Contributors - null null
+2024-02-26 14:45:18.365 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 14:45:18.367 +02:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2024-02-26 14:45:18.411 +02:00 [INF] Handling ListContributorsQuery
+2024-02-26 14:45:18.412 +02:00 [INF] Property Skip : null
+2024-02-26 14:45:18.412 +02:00 [INF] Property Take : null
+2024-02-26 14:45:18.529 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-26 14:45:18.538 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 125 ms
+2024-02-26 14:45:18.564 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2024-02-26 14:45:18.568 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors - 200 null application/json 207.7561ms
+2024-02-26 14:45:23.937 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 14:45:23.941 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 14:45:23.958 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 14:45:23.966 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 14:45:23.968 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 14:45:24.019 +02:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 14:45:24.040 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 14:49:36.526 +02:00 [INF] Registered 5 endpoints in 719 milliseconds.
+2024-02-26 14:49:37.256 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 14:49:37.445 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 14:49:37.485 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 14:49:37.602 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 14:49:37.609 +02:00 [INF] Hosting environment: Development
+2024-02-26 14:49:37.609 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 14:49:37.641 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 14:49:37.765 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 14:49:37.772 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 135.3692ms
+2024-02-26 14:49:37.876 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 110.9131ms
+2024-02-26 14:49:37.884 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 14:49:37.889 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 14:49:37.893 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.1837ms
+2024-02-26 14:49:37.925 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.7742ms
+2024-02-26 14:49:37.970 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 14:49:38.482 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 512.3156ms
+2024-02-26 14:49:40.730 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 14:49:40.740 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 14:49:40.742 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 14:49:40.762 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 14:49:40.771 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 14:49:40.780 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 14:49:40.907 +02:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 14:49:40.933 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 14:54:11.724 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:54:11.746 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 14:54:11.751 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 14:54:11.758 +02:00 [INF] Applying migration '20240226123224_AddNewEntities'.
+2024-02-26 14:54:11.786 +02:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Contributors" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Contributors" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL
+);
+2024-02-26 14:55:07.881 +02:00 [INF] Registered 5 endpoints in 657 milliseconds.
+2024-02-26 14:55:08.671 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 14:55:08.842 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 14:55:08.882 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 14:55:09.007 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 14:55:09.007 +02:00 [INF] Hosting environment: Development
+2024-02-26 14:55:09.008 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 14:55:09.042 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 14:55:09.191 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 14:55:09.198 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 161.3473ms
+2024-02-26 14:55:09.303 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 111.8864ms
+2024-02-26 14:55:09.312 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 14:55:09.315 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 14:55:09.318 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.4171ms
+2024-02-26 14:55:09.362 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.4982ms
+2024-02-26 14:55:09.398 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 14:55:09.845 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 447.2318ms
+2024-02-26 14:55:11.480 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 14:55:11.491 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 14:55:11.494 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 14:55:11.513 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 14:55:11.521 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 14:55:11.532 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 14:55:11.674 +02:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 14:55:11.698 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 14:56:22.454 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 14:56:52.336 +02:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 14:56:52.337 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 14:56:57.791 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 14:57:21.233 +02:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 14:57:21.234 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-26 15:05:51.800 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 15:05:51.826 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2024-02-26 15:05:51.832 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-02-26 15:05:51.840 +02:00 [INF] Applying migration '20240226123224_AddNewEntities'.
+2024-02-26 15:05:51.868 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "People" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_People" PRIMARY KEY AUTOINCREMENT,
+    "PersonId" INTEGER NOT NULL,
+    "Name" TEXT NOT NULL,
+    "PersonalCodeOrRegistrationNumber" TEXT NOT NULL,
+    "PersonType" INTEGER NOT NULL
+);
+2024-02-26 15:05:51.869 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "LandProperties" (
+    "LandPropertyId" INTEGER NOT NULL CONSTRAINT "PK_LandProperties" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NOT NULL,
+    "CadastralMark" INTEGER NOT NULL,
+    "Status" INTEGER NOT NULL,
+    "PersonId" INTEGER NOT NULL,
+    CONSTRAINT "FK_LandProperties_People_PersonId" FOREIGN KEY ("PersonId") REFERENCES "People" ("Id") ON DELETE CASCADE
+);
+2024-02-26 15:05:51.869 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Plots" (
+    "PlotId" INTEGER NOT NULL CONSTRAINT "PK_Plots" PRIMARY KEY AUTOINCREMENT,
+    "CadastralMark" INTEGER NOT NULL,
+    "TotalAreaInHectares" TEXT NOT NULL,
+    "DateOfSurvey" TEXT NOT NULL,
+    "LandPropertyId" INTEGER NOT NULL,
+    CONSTRAINT "FK_Plots_LandProperties_LandPropertyId" FOREIGN KEY ("LandPropertyId") REFERENCES "LandProperties" ("LandPropertyId") ON DELETE CASCADE
+);
+2024-02-26 15:05:51.869 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "LandTypes" (
+    "LandTypeId" INTEGER NOT NULL CONSTRAINT "PK_LandTypes" PRIMARY KEY AUTOINCREMENT,
+    "Type" INTEGER NOT NULL,
+    "AreaInHectares" TEXT NOT NULL,
+    "PlotId" INTEGER NOT NULL,
+    CONSTRAINT "FK_LandTypes_Plots_PlotId" FOREIGN KEY ("PlotId") REFERENCES "Plots" ("PlotId") ON DELETE CASCADE
+);
+2024-02-26 15:05:51.871 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_LandProperties_PersonId" ON "LandProperties" ("PersonId");
+2024-02-26 15:05:51.871 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_LandTypes_PlotId" ON "LandTypes" ("PlotId");
+2024-02-26 15:05:51.871 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Plots_LandPropertyId" ON "Plots" ("LandPropertyId");
+2024-02-26 15:05:51.871 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20240226123224_AddNewEntities', '8.0.0');
+2024-02-26 15:06:12.205 +02:00 [INF] Registered 5 endpoints in 591 milliseconds.
+2024-02-26 15:06:12.920 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:06:13.066 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:06:13.096 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:06:13.192 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:06:13.192 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:06:13.192 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:06:13.224 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:06:13.368 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 15:06:13.376 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 158.9244ms
+2024-02-26 15:06:13.470 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 101.9111ms
+2024-02-26 15:06:13.479 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:06:13.479 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:06:13.485 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.9445ms
+2024-02-26 15:06:13.522 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.1629ms
+2024-02-26 15:06:13.564 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 15:06:13.934 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 369.9259ms
+2024-02-26 15:06:17.375 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:06:17.381 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:06:17.383 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:06:17.396 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:06:17.401 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:06:17.406 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:06:17.492 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:06:17.497 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 90 ms
+2024-02-26 15:06:17.500 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 97.2145ms.
+2024-02-26 15:06:17.515 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:06:17.580 +02:00 [INF] Executed ViewResult - view Index executed in 67.8155ms.
+2024-02-26 15:06:17.581 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 185.1618ms
+2024-02-26 15:06:17.582 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:06:17.592 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:06:17.592 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:06:17.592 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:06:17.603 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:06:17.603 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 226.1775ms
+2024-02-26 15:06:17.608 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:06:17.612 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 20.6795ms
+2024-02-26 15:06:17.612 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 11.6376ms
+2024-02-26 15:06:17.612 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 21.5039ms
+2024-02-26 15:06:17.613 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:06:17.614 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 6.6643ms
+2024-02-26 15:06:17.619 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 6.7992ms
+2024-02-26 15:06:17.621 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:06:17.621 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:06:17.621 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:06:17.621 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:06:17.624 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.6576ms
+2024-02-26 15:06:17.643 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/favicon.ico - null null
+2024-02-26 15:06:17.644 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/favicon.ico - 404 null null 0.8858ms
+2024-02-26 15:06:17.644 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/favicon.ico, Response status code: 404
+2024-02-26 15:25:57.992 +02:00 [INF] Registered 5 endpoints in 3903 milliseconds.
+2024-02-26 15:26:00.047 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:26:00.390 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:26:00.482 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:26:00.771 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:26:00.772 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:26:00.772 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:26:00.852 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:26:01.429 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 15:26:01.448 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 605.819ms
+2024-02-26 15:26:01.760 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 330.796ms
+2024-02-26 15:26:01.775 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:26:01.784 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:26:01.791 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 17.871ms
+2024-02-26 15:26:01.911 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 126.9713ms
+2024-02-26 15:26:02.007 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 15:26:03.181 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 1174.8265ms
+2024-02-26 15:26:06.151 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/Contributors - null null
+2024-02-26 15:26:06.157 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:26:06.161 +02:00 [INF] Executing endpoint 'HTTP: GET /Contributors'
+2024-02-26 15:26:06.214 +02:00 [INF] Handling ListContributorsQuery
+2024-02-26 15:26:06.215 +02:00 [INF] Property Skip : null
+2024-02-26 15:26:06.216 +02:00 [INF] Property Take : null
+2024-02-26 15:26:06.384 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-26 15:26:06.394 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 177 ms
+2024-02-26 15:26:06.431 +02:00 [INF] Executed endpoint 'HTTP: GET /Contributors'
+2024-02-26 15:26:06.436 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/Contributors - 200 null application/json 285.3726ms
+2024-02-26 15:26:12.914 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:26:12.920 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:26:12.941 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:26:12.950 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:26:12.953 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:26:13.022 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:26:13.023 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 69 ms
+2024-02-26 15:26:13.028 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 73.4286ms.
+2024-02-26 15:26:13.041 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:26:13.154 +02:00 [INF] Executed ViewResult - view Index executed in 116.0127ms.
+2024-02-26 15:26:13.156 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 213.4453ms
+2024-02-26 15:26:13.156 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:26:13.160 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 245.8103ms
+2024-02-26 15:26:13.170 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:26:13.170 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:26:13.170 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:26:13.170 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:26:13.178 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:26:13.184 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.9269ms
+2024-02-26 15:26:13.189 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 11.0749ms
+2024-02-26 15:26:13.190 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 20.7024ms
+2024-02-26 15:26:13.189 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 20.6363ms
+2024-02-26 15:26:13.190 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:26:13.200 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 10.0672ms
+2024-02-26 15:26:13.202 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:26:13.202 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:26:13.209 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.9083ms
+2024-02-26 15:26:13.218 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:26:13.218 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:26:22.142 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:26:22.146 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:26:22.146 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:26:22.146 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:26:22.147 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:26:22.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:26:22.149 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 2 ms
+2024-02-26 15:26:22.149 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.3452ms.
+2024-02-26 15:26:22.149 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:26:22.153 +02:00 [INF] Executed ViewResult - view Index executed in 3.7354ms.
+2024-02-26 15:26:22.153 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 7.0199ms
+2024-02-26 15:26:22.153 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:26:22.154 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 12.1987ms
+2024-02-26 15:26:22.159 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:26:22.160 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:26:22.163 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:26:22.164 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 4.2043ms
+2024-02-26 15:26:22.163 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:26:22.164 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:26:22.163 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:26:22.168 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 4.7083ms
+2024-02-26 15:26:22.168 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:26:22.168 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 5.8234ms
+2024-02-26 15:26:22.169 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:26:22.172 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:26:22.172 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 4.9074ms
+2024-02-26 15:26:22.172 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.4063ms
+2024-02-26 15:26:22.172 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:26:22.192 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.8302ms
+2024-02-26 15:27:24.637 +02:00 [INF] Registered 5 endpoints in 937 milliseconds.
+2024-02-26 15:27:26.128 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:27:26.605 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:27:26.847 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:27:27.255 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:27:27.256 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:27:27.256 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:27:27.365 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:27:28.387 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 15:27:28.413 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 1069.486ms
+2024-02-26 15:27:28.841 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 453.0445ms
+2024-02-26 15:27:28.865 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:27:28.875 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:27:28.885 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 23.1707ms
+2024-02-26 15:27:30.546 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 15:27:30.548 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1673.1698ms
+2024-02-26 15:27:31.958 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 1412.4272ms
+2024-02-26 15:27:32.195 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:27:32.214 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:27:32.220 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:27:32.262 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:27:32.281 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:27:32.308 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:27:32.724 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:27:32.744 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 434 ms
+2024-02-26 15:27:32.760 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 466.8139ms.
+2024-02-26 15:27:32.796 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:27:32.997 +02:00 [INF] Executed ViewResult - view Index executed in 210.4792ms.
+2024-02-26 15:27:32.999 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 735.4333ms
+2024-02-26 15:27:32.999 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:27:33.006 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:27:33.017 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:27:33.038 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:27:33.039 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:27:33.054 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 48.6095ms
+2024-02-26 15:27:33.054 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 37.6033ms
+2024-02-26 15:27:33.062 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 23.0993ms
+2024-02-26 15:27:33.073 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:27:33.074 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:27:33.075 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:27:33.074 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:27:33.085 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 11.0061ms
+2024-02-26 15:27:33.085 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:27:33.090 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 18.3671ms
+2024-02-26 15:27:33.091 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:27:33.097 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 901.3335ms
+2024-02-26 15:27:33.100 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.1866ms
+2024-02-26 15:27:36.870 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:27:36.870 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:27:36.873 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 3.2275ms
+2024-02-26 15:27:36.873 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 3.1871ms
+2024-02-26 15:27:36.873 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:27:36.873 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:29:29.400 +02:00 [INF] Registered 5 endpoints in 3298 milliseconds.
+2024-02-26 15:29:31.842 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:29:32.339 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:29:32.451 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:29:32.755 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:29:32.755 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:29:32.755 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:29:32.834 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:29:32.834 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:29:33.183 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:29:33.188 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:29:33.194 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 499 null null 373.0461ms
+2024-02-26 15:29:33.219 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:29:33.232 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:29:33.247 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:29:33.468 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:29:33.477 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 229 ms
+2024-02-26 15:29:33.485 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 246.7864ms.
+2024-02-26 15:29:33.503 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:29:33.699 +02:00 [INF] Executed ViewResult - view Index executed in 198.2994ms.
+2024-02-26 15:29:33.702 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 481.1599ms
+2024-02-26 15:29:33.702 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:29:33.727 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:29:33.740 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:29:33.742 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:29:33.751 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:29:33.751 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 931.5696ms
+2024-02-26 15:29:33.761 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:29:33.768 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:29:33.772 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 21.9396ms
+2024-02-26 15:29:33.772 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 37.9286ms
+2024-02-26 15:29:33.773 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 14.739ms
+2024-02-26 15:29:33.773 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 31.0482ms
+2024-02-26 15:29:33.774 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 46.4693ms
+2024-02-26 15:29:33.774 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:29:33.774 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:29:33.774 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:29:33.774 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:29:33.872 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 103.8133ms
+2024-02-26 15:29:36.857 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:29:36.857 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:29:36.859 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 8.9646ms
+2024-02-26 15:29:36.859 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 2.4518ms
+2024-02-26 15:29:36.860 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:29:36.860 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:30:38.641 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:30:38.657 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 15.1466ms
+2024-02-26 15:30:38.658 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:33:52.792 +02:00 [INF] Registered 5 endpoints in 883 milliseconds.
+2024-02-26 15:33:53.843 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:33:54.167 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:33:54.227 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:33:54.435 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:33:54.436 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:33:54.436 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:33:54.482 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:33:54.697 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 15:33:54.709 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 231.9429ms
+2024-02-26 15:33:54.911 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:33:54.911 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:33:54.911 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 213.4357ms
+2024-02-26 15:33:54.916 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.3631ms
+2024-02-26 15:33:54.976 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.3913ms
+2024-02-26 15:33:55.022 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 15:33:55.864 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 842.2071ms
+2024-02-26 15:33:55.975 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/index.html - null null
+2024-02-26 15:33:55.982 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:33:55.984 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/index.html - 404 null null 8.773ms
+2024-02-26 15:33:55.987 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/index.html, Response status code: 404
+2024-02-26 15:33:58.861 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:33:58.870 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:33:58.901 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:33:58.915 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:33:58.930 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:33:59.144 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:33:59.156 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 224 ms
+2024-02-26 15:33:59.166 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 242.9725ms.
+2024-02-26 15:33:59.189 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:33:59.324 +02:00 [INF] Executed ViewResult - view Index executed in 139.0992ms.
+2024-02-26 15:33:59.326 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 423.5079ms
+2024-02-26 15:33:59.327 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:33:59.333 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:33:59.333 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:33:59.341 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:33:59.346 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 13.4981ms
+2024-02-26 15:33:59.346 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 13.6024ms
+2024-02-26 15:33:59.347 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:33:59.347 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:33:59.347 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:33:59.351 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:33:59.356 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:33:59.372 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 404 null null 25.4762ms
+2024-02-26 15:33:59.377 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
+2024-02-26 15:33:59.377 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 25.7238ms
+2024-02-26 15:33:59.378 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 404 null null 21.8941ms
+2024-02-26 15:33:59.378 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/jquery/dist/jquery.min.js, Response status code: 404
+2024-02-26 15:33:59.380 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 518.6566ms
+2024-02-26 15:33:59.400 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.1503ms
+2024-02-26 15:34:02.882 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:34:02.882 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:34:02.884 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 404 null null 3.2239ms
+2024-02-26 15:34:02.884 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 404 null null 3.103ms
+2024-02-26 15:34:02.885 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/css/site.css, Response status code: 404
+2024-02-26 15:34:02.885 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 404
+2024-02-26 15:38:44.622 +02:00 [INF] Registered 5 endpoints in 747 milliseconds.
+2024-02-26 15:38:45.834 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-26 15:38:46.177 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-26 15:38:46.236 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-26 15:38:46.453 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-26 15:38:46.454 +02:00 [INF] Hosting environment: Development
+2024-02-26 15:38:46.454 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-26 15:38:46.502 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-26 15:38:46.740 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-26 15:38:46.745 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 252.5098ms
+2024-02-26 15:38:46.937 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 197.4925ms
+2024-02-26 15:38:46.974 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:38:46.974 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:38:46.979 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.4318ms
+2024-02-26 15:38:47.033 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.3076ms
+2024-02-26 15:38:47.088 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-26 15:38:47.926 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 838.6412ms
+2024-02-26 15:38:49.575 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-26 15:38:49.583 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-26 15:38:49.587 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:38:49.606 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-26 15:38:49.614 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-26 15:38:49.623 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-26 15:38:49.765 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-26 15:38:49.772 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 148 ms
+2024-02-26 15:38:49.779 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 159.8775ms.
+2024-02-26 15:38:49.793 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-26 15:38:49.890 +02:00 [INF] Executed ViewResult - view Index executed in 100.5807ms.
+2024-02-26 15:38:49.892 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 284.7598ms
+2024-02-26 15:38:49.892 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-26 15:38:49.904 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-26 15:38:49.904 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-26 15:38:49.904 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 328.8649ms
+2024-02-26 15:38:49.909 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-26 15:38:49.915 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-26 15:38:49.915 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-26 15:38:49.922 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 16.7219ms
+2024-02-26 15:38:49.924 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-26 15:38:49.961 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\css\site.css'
+2024-02-26 15:38:49.962 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 200 194 text/css 47.5336ms
+2024-02-26 15:38:49.965 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.154ms
+2024-02-26 15:38:49.971 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2024-02-26 15:38:49.977 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 73.1549ms
+2024-02-26 15:38:50.003 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2024-02-26 15:38:50.005 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 82.0452ms
+2024-02-26 15:38:50.032 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\jquery\dist\jquery.min.js'
+2024-02-26 15:38:50.034 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 200 89478 text/javascript 130.1169ms

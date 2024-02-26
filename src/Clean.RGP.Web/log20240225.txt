@@ -1,0 +1,340 @@
+2024-02-25 12:10:38.492 +02:00 [INF] Registered 5 endpoints in 2071 milliseconds.
+2024-02-25 12:10:39.964 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 12:10:40.163 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 12:10:40.287 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 12:10:40.288 +02:00 [INF] Hosting environment: Development
+2024-02-25 12:10:40.288 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 12:10:40.361 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 12:10:41.172 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 12:10:41.187 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 830.9466ms
+2024-02-25 12:10:41.330 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 157.8379ms
+2024-02-25 12:10:41.340 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 12:10:41.343 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 12:10:41.347 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.6756ms
+2024-02-25 12:10:41.620 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 277.6686ms
+2024-02-25 12:10:41.659 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 12:10:42.364 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 705.3126ms
+2024-02-25 12:10:49.926 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/api/Test - null null
+2024-02-25 12:10:49.931 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 12:10:49.935 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web)'
+2024-02-25 12:10:49.953 +02:00 [INF] Route matched with {action = "Get", controller = "Test"}. Executing controller action with signature System.Threading.Tasks.Task Get() on controller Clean.RGP.Web.Controllers.TestController (Clean.RGP.Web).
+2024-02-25 12:10:49.960 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 12:10:49.969 +02:00 [INF] Handling ListContributorsQuery
+2024-02-25 12:10:49.970 +02:00 [INF] Property Skip : null
+2024-02-25 12:10:49.970 +02:00 [INF] Property Take : null
+2024-02-25 12:10:50.083 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-25 12:10:50.091 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 120 ms
+2024-02-25 12:10:50.095 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.EmptyResult in 130.8339ms.
+2024-02-25 12:10:50.099 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web) in 142.6331ms
+2024-02-25 12:10:50.099 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web)'
+2024-02-25 12:10:50.104 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/api/Test - 200 null null 178.5444ms
+2024-02-25 12:13:13.434 +02:00 [INF] Registered 5 endpoints in 838 milliseconds.
+2024-02-25 12:13:14.328 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 12:13:14.488 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 12:13:14.589 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 12:13:14.589 +02:00 [INF] Hosting environment: Development
+2024-02-25 12:13:14.589 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 12:13:14.627 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 12:13:14.781 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 12:13:14.787 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 164.534ms
+2024-02-25 12:13:14.902 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 120.4295ms
+2024-02-25 12:13:14.909 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 12:13:14.909 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 12:13:14.914 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.5371ms
+2024-02-25 12:13:14.954 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.7466ms
+2024-02-25 12:13:15.007 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 12:13:15.468 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 461.3942ms
+2024-02-25 12:13:18.695 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/api/Test - null null
+2024-02-25 12:13:18.702 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 12:13:18.707 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web)'
+2024-02-25 12:13:18.727 +02:00 [INF] Route matched with {action = "Get", controller = "Test"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Clean.RGP.Web.Controllers.TestController (Clean.RGP.Web).
+2024-02-25 12:13:18.735 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 12:13:18.745 +02:00 [INF] Handling ListContributorsQuery
+2024-02-25 12:13:18.746 +02:00 [INF] Property Skip : null
+2024-02-25 12:13:18.746 +02:00 [INF] Property Take : null
+2024-02-25 12:13:18.864 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Name"
+FROM (
+    SELECT Id, Name FROM Contributors
+) AS "c"
+2024-02-25 12:13:18.873 +02:00 [INF] Handled ListContributorsQuery with Ardalis.Result.Result`1[System.Collections.Generic.IEnumerable`1[Clean.RGP.UseCases.Contributors.ContributorDTO]] in 126 ms
+2024-02-25 12:13:18.877 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 137.9457ms.
+2024-02-25 12:13:18.884 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Clean.RGP.UseCases.Contributors.ContributorDTO, Clean.RGP.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-02-25 12:13:18.911 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web) in 179.4766ms
+2024-02-25 12:13:18.912 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.TestController.Get (Clean.RGP.Web)'
+2024-02-25 12:13:18.918 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/api/Test - 200 null application/json; charset=utf-8 222.6468ms
+2024-02-25 12:20:56.418 +02:00 [INF] Registered 5 endpoints in 673 milliseconds.
+2024-02-25 12:20:57.342 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 12:20:58.025 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 12:20:58.170 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 12:20:58.171 +02:00 [INF] Hosting environment: Development
+2024-02-25 12:20:58.171 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 12:20:58.213 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 12:20:58.388 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 12:20:58.396 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 188.5781ms
+2024-02-25 12:20:58.574 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 186.3249ms
+2024-02-25 12:20:58.581 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 12:20:58.584 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 12:20:58.589 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.1032ms
+2024-02-25 12:20:58.643 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.352ms
+2024-02-25 12:20:58.671 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 12:20:59.366 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 694.9488ms
+2024-02-25 12:55:09.828 +02:00 [INF] Registered 5 endpoints in 1795 milliseconds.
+2024-02-25 12:55:11.455 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 12:55:11.639 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 12:55:11.684 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 12:55:11.817 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 12:55:11.818 +02:00 [INF] Hosting environment: Development
+2024-02-25 12:55:11.818 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 12:55:11.883 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 12:55:12.058 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 12:55:12.070 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 184.1035ms
+2024-02-25 12:55:12.198 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 139.5381ms
+2024-02-25 12:55:12.221 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 12:55:12.225 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.31ms
+2024-02-25 12:55:12.236 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 12:55:12.278 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.3531ms
+2024-02-25 12:55:12.396 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 12:55:12.908 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 511.5367ms
+2024-02-25 12:55:45.623 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 12:55:45.637 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 12:55:45.639 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 404 null null 16.6718ms
+2024-02-25 12:55:45.642 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/, Response status code: 404
+2024-02-25 12:55:49.579 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/index - null null
+2024-02-25 12:55:49.588 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/index - 404 null null 9.1659ms
+2024-02-25 12:55:49.589 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/index, Response status code: 404
+2024-02-25 13:08:17.614 +02:00 [INF] Registered 5 endpoints in 2650 milliseconds.
+2024-02-25 13:08:20.020 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:08:20.358 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:08:20.623 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:09:15.592 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:09:15.774 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:09:15.822 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:09:16.028 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:09:16.029 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:09:16.029 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:09:16.183 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:09:16.328 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:09:16.343 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 404 null null 164.3566ms
+2024-02-25 13:09:16.345 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/swagger, Response status code: 404
+2024-02-25 13:09:20.725 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:09:20.745 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 404 null null 19.9917ms
+2024-02-25 13:09:20.746 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/, Response status code: 404
+2024-02-25 13:09:23.958 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 13:09:23.962 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 404 null null 4.1668ms
+2024-02-25 13:09:23.962 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/swagger/index.html, Response status code: 404
+2024-02-25 13:09:26.304 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:09:26.308 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 404 null null 4.3524ms
+2024-02-25 13:09:26.308 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/, Response status code: 404
+2024-02-25 13:10:21.917 +02:00 [INF] Registered 5 endpoints in 565 milliseconds.
+2024-02-25 13:10:22.713 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:10:22.883 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:10:22.925 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:10:23.023 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:10:23.024 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:10:23.024 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:10:23.050 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:10:23.167 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 13:10:23.174 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 127.8228ms
+2024-02-25 13:10:23.351 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 184.212ms
+2024-02-25 13:10:23.357 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 13:10:23.360 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 13:10:23.363 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.9011ms
+2024-02-25 13:10:23.409 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.3044ms
+2024-02-25 13:10:23.445 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 13:10:24.021 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 576.3692ms
+2024-02-25 13:10:28.037 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:10:28.044 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:10:28.046 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 404 null null 8.6311ms
+2024-02-25 13:10:28.048 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/, Response status code: 404
+2024-02-25 13:10:33.314 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/index - null null
+2024-02-25 13:10:33.318 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/index - 404 null null 4.5656ms
+2024-02-25 13:10:33.319 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:57678/index, Response status code: 404
+2024-02-25 13:13:14.124 +02:00 [INF] Registered 5 endpoints in 709 milliseconds.
+2024-02-25 13:13:15.044 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:13:15.310 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:13:15.356 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:13:15.518 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:13:15.519 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:13:15.519 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:13:15.565 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:13:15.755 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 13:13:15.762 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 202.9463ms
+2024-02-25 13:13:15.903 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 147.9787ms
+2024-02-25 13:13:15.909 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 13:13:15.909 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 13:13:15.914 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.1771ms
+2024-02-25 13:13:15.961 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.7851ms
+2024-02-25 13:13:16.002 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 13:13:16.610 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 608.3458ms
+2024-02-25 13:13:19.860 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:13:19.871 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:13:19.873 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-25 13:13:19.894 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-25 13:13:19.906 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 13:13:19.917 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-25 13:36:44.574 +02:00 [INF] Registered 5 endpoints in 922 milliseconds.
+2024-02-25 13:36:45.964 +02:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:36:46.268 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:36:46.330 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:36:46.538 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:36:46.539 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:36:46.539 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:36:46.591 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:36:46.591 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:36:46.808 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:36:46.810 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-25 13:36:46.818 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 499 null null 233.6001ms
+2024-02-25 13:36:46.831 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-25 13:36:46.839 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 13:36:46.849 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-25 13:40:32.616 +02:00 [INF] Registered 5 endpoints in 650 milliseconds.
+2024-02-25 13:40:33.373 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:40:33.514 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:40:33.550 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:40:33.646 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:40:33.646 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:40:33.647 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:40:33.678 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:40:33.819 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 13:40:33.827 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 153.9222ms
+2024-02-25 13:40:33.948 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 128.7482ms
+2024-02-25 13:40:33.957 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 13:40:33.961 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 13:40:33.966 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 9.7604ms
+2024-02-25 13:40:34.017 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.6981ms
+2024-02-25 13:40:34.062 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 13:40:34.484 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 421.4871ms
+2024-02-25 13:40:39.679 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:40:39.688 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:40:39.690 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-25 13:40:39.702 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-25 13:40:39.709 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 13:40:39.717 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-25 13:40:39.852 +02:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-25 13:40:39.918 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-02-25 13:48:21.355 +02:00 [INF] Registered 5 endpoints in 784 milliseconds.
+2024-02-25 13:48:23.319 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-25 13:48:23.594 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-25 13:48:23.651 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-25 13:48:23.852 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-25 13:48:23.852 +02:00 [INF] Hosting environment: Development
+2024-02-25 13:48:23.852 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-25 13:48:23.897 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-25 13:48:24.075 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-25 13:48:24.083 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 193.9387ms
+2024-02-25 13:48:24.239 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 164.6828ms
+2024-02-25 13:48:24.247 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-25 13:48:24.247 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-25 13:48:24.253 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.9362ms
+2024-02-25 13:48:24.298 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.0307ms
+2024-02-25 13:48:24.344 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-25 13:48:24.913 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 569.0167ms
+2024-02-25 13:48:25.593 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-25 13:48:25.601 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-25 13:48:25.604 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-25 13:48:25.629 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-25 13:48:25.642 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-25 13:48:25.651 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-25 13:48:25.828 +02:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-25 13:48:25.857 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: People'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()

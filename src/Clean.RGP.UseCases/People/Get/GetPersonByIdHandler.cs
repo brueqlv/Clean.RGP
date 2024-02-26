@@ -3,7 +3,7 @@ using Ardalis.SharedKernel;
 using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
 
-namespace Clean.RGP.UseCases.Contributors.Get;
+namespace Clean.RGP.UseCases.People.Get;
 public class GetPersonByIdHandler(IGetPersonByIdService _getPersonByIdService)
   : IQueryHandler<GetPersonByIdQuery, Result<Person>>
 {

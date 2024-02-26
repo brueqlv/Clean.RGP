@@ -1,0 +1,80 @@
+﻿@using Clean.RGP.Core.Enums
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Clean.RGP.Core.PersonAggregate.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Vārds</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt class="col-sm-3">Personas kods/Reģistrācijas numurs</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PersonalCodeOrRegistrationNumber)</dd>
+
+        <dt class="col-sm-3">Personas tips</dt>
+        <dd class="col-sm-9">@EnumExtensions.GetDescription(Model.PersonType)</dd>
+    </dl>
+</div>
+
+<hr />
+
+@if (Model.LandProperties != null && Model.LandProperties.Any())
+{
+    <h4>Zemes īpašumi:</h4>
+    <hr />
+    <div class="property-container">
+
+        @foreach (var property in Model.LandProperties)
+        {
+            <div class="inner-container">
+                <h5>Īpašums: @property.Name</h5>
+                <hr/>
+                <p>Kadastra numurs: @property.CadastralMark</p>
+                <p>Status: @EnumExtensions.GetDescription(property.Status)</p>
+
+                @if (property.Plots != null && property.Plots.Any())
+                {
+                    <h6>Zemes gabali:</h6>
+                    <hr/>
+
+                    foreach (var plot in property.Plots)
+                    {
+                        <div>
+                            <p>Kadastra numurs: @plot.CadastralMark</p>
+                            <p>Kopplatība hektāros: @plot.TotalAreaInHectares.ToString("N2")</p>
+                            <p>Uzmērīšanas datums: @plot.DateOfSurvey.ToString("yyyy-MM-dd")</p>
+                            <hr/>
+
+                            @if (plot.LandTypes != null && plot.LandTypes.Any())
+                            {
+                                <h6>Zemes lietojumi:</h6>
+                                <hr/>
+
+                                foreach (var landType in plot.LandTypes)
+                                {
+                                    <div>
+                                        <p>Zemes lietojums: @EnumExtensions.GetDescription(landType.Type)</p>
+                                        <p>Platība hektāros: @landType.AreaInHectares.ToString("N2")</p>
+                                        <hr/>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </div>
+}
+
+<div>
+    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.PersonId">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
