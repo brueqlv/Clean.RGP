@@ -1,0 +1,136 @@
+2024-02-27 09:37:48.152 +02:00 [INF] Registered 5 endpoints in 2662 milliseconds.
+2024-02-27 09:37:50.252 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-27 09:37:50.515 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Contributors" AS "c")
+2024-02-27 09:37:50.645 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-27 09:37:50.853 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-27 09:37:50.854 +02:00 [INF] Hosting environment: Development
+2024-02-27 09:37:50.854 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-27 09:37:50.998 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2024-02-27 09:37:51.220 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2024-02-27 09:37:51.226 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 233.6254ms
+2024-02-27 09:37:51.413 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 192.8235ms
+2024-02-27 09:37:51.416 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-27 09:37:51.420 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.1129ms
+2024-02-27 09:37:51.427 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-27 09:37:51.490 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.9899ms
+2024-02-27 09:37:51.538 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2024-02-27 09:37:52.154 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 615.6287ms
+2024-02-27 09:37:55.389 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-27 09:37:55.397 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-27 09:37:55.401 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-27 09:37:55.420 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-27 09:37:55.429 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-27 09:37:55.438 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-27 09:37:55.578 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Name", "p"."PersonId", "p"."PersonType", "p"."PersonalCodeOrRegistrationNumber"
+FROM "People" AS "p"
+2024-02-27 09:37:55.583 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 144 ms
+2024-02-27 09:37:55.587 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 154.8942ms.
+2024-02-27 09:37:55.595 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-27 09:37:55.684 +02:00 [INF] Executed ViewResult - view Index executed in 89.9185ms.
+2024-02-27 09:37:55.686 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 265.2101ms
+2024-02-27 09:37:55.686 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-27 09:37:55.689 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-02-27 09:37:55.691 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-02-27 09:37:55.694 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-27 09:37:55.733 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-02-27 09:37:55.733 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-02-27 09:37:55.740 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-27 09:37:55.746 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.2938ms
+2024-02-27 09:37:55.761 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 371.9162ms
+2024-02-27 09:37:55.761 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2024-02-27 09:37:55.761 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2024-02-27 09:37:55.761 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2024-02-27 09:37:55.761 +02:00 [INF] The file /css/site.css was not modified
+2024-02-27 09:37:55.763 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 73.9879ms
+2024-02-27 09:37:55.763 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 30.0273ms
+2024-02-27 09:37:55.763 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 304 null text/javascript 30.0321ms
+2024-02-27 09:37:55.763 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 304 null text/css 71.5845ms
+2024-02-27 09:37:55.766 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.1922ms
+2024-02-27 09:37:56.815 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/Create - null null
+2024-02-27 09:37:56.818 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-02-27 09:37:56.820 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Create() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-27 09:37:56.821 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-27 09:37:56.821 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3734ms.
+2024-02-27 09:37:56.822 +02:00 [INF] Executing ViewResult, running view Create.
+2024-02-27 09:37:56.949 +02:00 [INF] Executed ViewResult - view Create executed in 128.1172ms.
+2024-02-27 09:37:56.950 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 129.3368ms
+2024-02-27 09:37:56.950 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-02-27 09:37:56.950 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 135.6788ms
+2024-02-27 09:37:56.956 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - null null
+2024-02-27 09:37:56.956 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2024-02-27 09:37:56.958 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2024-02-27 09:37:56.963 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-27 09:37:56.967 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-27 09:37:56.968 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.9388ms
+2024-02-27 09:37:56.977 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.5021ms
+2024-02-27 09:37:56.977 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\js\site.js'
+2024-02-27 09:37:56.978 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - 200 5876 text/javascript 21.8354ms
+2024-02-27 09:37:57.004 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2024-02-27 09:37:57.004 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2024-02-27 09:37:57.008 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5873 text/javascript 51.6663ms
+2024-02-27 09:37:57.008 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery-validation/dist/jquery.validate.min.js - 200 23264 text/javascript 50.4253ms
+2024-02-27 09:38:02.252 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2024-02-27 09:38:02.253 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2024-02-27 09:38:02.267 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2024-02-27 09:38:02.273 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 21.3215ms
+2024-02-27 09:38:02.284 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: 'C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map'
+2024-02-27 09:38:02.290 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 449111 text/plain 37.3952ms
+2024-02-27 09:38:29.764 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Create - application/x-www-form-urlencoded 379
+2024-02-27 09:38:29.775 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-02-27 09:38:29.794 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-27 09:38:29.831 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-27 09:38:29.834 +02:00 [INF] Handling AddNewPersonCommand
+2024-02-27 09:38:29.836 +02:00 [INF] Property Person : {"PersonId":0,"Name":"Pīter PEn","PersonalCodeOrRegistrationNumber":"1221212121212","PersonType":"Natural","LandProperties":[{"LandPropertyId":0,"Name":"Osīši","CadastralMark":363748,"Status":"HasPurchaseAgreement","Plots":[],"PersonId":0,"Person":null,"$type":"LandProperty"}],"Id":0,"DomainEvents":[],"$type":"Person"}
+2024-02-27 09:38:29.927 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 132.1699ms
+2024-02-27 09:38:29.928 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-02-27 09:38:29.929 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Autofac.Core.DependencyResolutionException: An exception was thrown while activating Clean.RGP.UseCases.People.Create.AddNewPersonHandler.
+ ---> Autofac.Core.DependencyResolutionException: None of the constructors found on type 'Clean.RGP.UseCases.People.Create.AddNewPersonHandler' can be invoked with the available services and parameters:
+Cannot resolve parameter 'Clean.RGP.Core.Interfaces.IAddNewPersonService _addNewPersonService' of constructor 'Void .ctor(Clean.RGP.Core.Interfaces.IAddNewPersonService)'.
+
+See https://autofac.rtfd.io/help/no-constructors-bindable for more info.
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.<>c__DisplayClass14_0.<UseSingleConstructorActivation>b__0(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.DisposalTrackingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.Middleware.ActivatorErrorHandlingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.SharingMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.Middleware.CircularDependencyDetectorMiddleware.Execute(ResolveRequestContext context, Action`1 next)
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
+   at Autofac.Core.Resolving.ResolveOperation.ExecuteOperation(ResolveRequest request)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Create(Person model) in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 49
+   at lambda_method945(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-27 09:38:30.006 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Create - 500 null text/html; charset=utf-8 241.5531ms
+2024-02-27 09:38:30.013 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-27 09:38:30.013 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-27 09:38:30.014 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 0.968ms
+2024-02-27 09:38:30.026 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.952ms
