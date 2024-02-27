@@ -6,37 +6,50 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Clean.RGP.Infrastructure.Migrations;
 
 /// <inheritdoc />
-public partial class AddNewEntities : Migration
+public partial class InitialCreate : Migration
 {
   /// <inheritdoc />
   protected override void Up(MigrationBuilder migrationBuilder)
   {
     migrationBuilder.CreateTable(
-        name: "People",
+        name: "Contributors",
         columns: table => new
         {
-          Id = table.Column<int>(type: "INTEGER", nullable: false)
-                .Annotation("Sqlite:Autoincrement", true),
-          PersonId = table.Column<int>(type: "INTEGER", nullable: false),
-          Name = table.Column<string>(type: "TEXT", nullable: false),
-          PersonalCodeOrRegistrationNumber = table.Column<string>(type: "TEXT", nullable: false),
-          PersonType = table.Column<int>(type: "INTEGER", nullable: false)
+          Id = table.Column<int>(type: "int", nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+          Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
         },
         constraints: table =>
         {
-          table.PrimaryKey("PK_People", x => x.Id);
+          table.PrimaryKey("PK_Contributors", x => x.Id);
+        });
+
+    migrationBuilder.CreateTable(
+        name: "People",
+        columns: table => new
+        {
+          PersonId = table.Column<int>(type: "int", nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+          Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+          PersonalCodeOrRegistrationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+          PersonType = table.Column<int>(type: "int", nullable: false),
+          Id = table.Column<int>(type: "int", nullable: false)
+        },
+        constraints: table =>
+        {
+          table.PrimaryKey("PK_People", x => x.PersonId);
         });
 
     migrationBuilder.CreateTable(
         name: "LandProperties",
         columns: table => new
         {
-          LandPropertyId = table.Column<int>(type: "INTEGER", nullable: false)
-                .Annotation("Sqlite:Autoincrement", true),
-          Name = table.Column<string>(type: "TEXT", nullable: false),
-          CadastralMark = table.Column<long>(type: "INTEGER", nullable: false),
-          Status = table.Column<int>(type: "INTEGER", nullable: false),
-          PersonId = table.Column<int>(type: "INTEGER", nullable: false)
+          LandPropertyId = table.Column<int>(type: "int", nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+          Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+          CadastralMark = table.Column<long>(type: "bigint", nullable: false),
+          Status = table.Column<int>(type: "int", nullable: false),
+          PersonId = table.Column<int>(type: "int", nullable: false)
         },
         constraints: table =>
         {
@@ -45,7 +58,7 @@ public partial class AddNewEntities : Migration
                       name: "FK_LandProperties_People_PersonId",
                       column: x => x.PersonId,
                       principalTable: "People",
-                      principalColumn: "Id",
+                      principalColumn: "PersonId",
                       onDelete: ReferentialAction.Cascade);
         });
 
@@ -53,12 +66,12 @@ public partial class AddNewEntities : Migration
         name: "Plots",
         columns: table => new
         {
-          PlotId = table.Column<int>(type: "INTEGER", nullable: false)
-                .Annotation("Sqlite:Autoincrement", true),
-          CadastralMark = table.Column<long>(type: "INTEGER", nullable: false),
-          TotalAreaInHectares = table.Column<decimal>(type: "TEXT", nullable: false),
-          DateOfSurvey = table.Column<DateTime>(type: "TEXT", nullable: false),
-          LandPropertyId = table.Column<int>(type: "INTEGER", nullable: false)
+          PlotId = table.Column<int>(type: "int", nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+          CadastralMark = table.Column<long>(type: "bigint", nullable: false),
+          TotalAreaInHectares = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+          DateOfSurvey = table.Column<DateTime>(type: "datetime2", nullable: false),
+          LandPropertyId = table.Column<int>(type: "int", nullable: false)
         },
         constraints: table =>
         {
@@ -75,11 +88,11 @@ public partial class AddNewEntities : Migration
         name: "LandTypes",
         columns: table => new
         {
-          LandTypeId = table.Column<int>(type: "INTEGER", nullable: false)
-                .Annotation("Sqlite:Autoincrement", true),
-          Type = table.Column<int>(type: "INTEGER", nullable: false),
-          AreaInHectares = table.Column<decimal>(type: "TEXT", nullable: false),
-          PlotId = table.Column<int>(type: "INTEGER", nullable: false)
+          LandTypeId = table.Column<int>(type: "int", nullable: false)
+                .Annotation("SqlServer:Identity", "1, 1"),
+          Type = table.Column<int>(type: "int", nullable: false),
+          AreaInHectares = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+          PlotId = table.Column<int>(type: "int", nullable: false)
         },
         constraints: table =>
         {

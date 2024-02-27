@@ -1,13 +1,23 @@
 ﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
 using Clean.RGP.Core.Interfaces;
+using Clean.RGP.Core.PersonAggregate;
 
 namespace Clean.RGP.UseCases.People.Delete;
-public class DeletePersonByIdHandler(IDeletePersonByIdService _deletePersonByIdService)
+public class DeletePersonByIdHandler(IRepository<Person> _repository)
   : ICommandHandler<DeletePersonByIdCommand, Result>
 {
   public async Task<Result> Handle(DeletePersonByIdCommand request, CancellationToken cancellationToken)
   {
-    return await _deletePersonByIdService.DeletePersonById(request.PersonId);
+    var personToDelete = await _repository.GetByIdAsync(request.PersonId, cancellationToken);
+
+    if (personToDelete!= null)
+    {
+      await _repository.DeleteAsync(personToDelete, cancellationToken);
+
+      return Result.Success();
+    }
+
+    return Result.Error();
   }
 }

@@ -28,6 +28,9 @@ public class AppDbContext : DbContext
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
     modelBuilder.Entity<Person>()
+      .HasKey(p => p.PersonId);
+
+    modelBuilder.Entity<Person>()
       .HasMany(p => p.LandProperties)
       .WithOne(lp => lp.Person)
       .HasForeignKey(lp => lp.PersonId)

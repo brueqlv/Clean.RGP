@@ -1,14 +1,16 @@
 ﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
-using Clean.RGP.Core.Interfaces;
+using Clean.RGP.Core.PersonAggregate;
 
 namespace Clean.RGP.UseCases.People.Create;
 
-public class AddNewPersonHandler(IAddNewPersonService _addNewPersonService)
-  : ICommandHandler<AddNewPersonCommand, Result>
+public class AddNewPersonHandler(IRepository<Person> _repository)
+  : ICommandHandler<AddNewPersonCommand, Result<Person>>
 {
-  public async Task<Result> Handle(AddNewPersonCommand request, CancellationToken cancellationToken)
+  public async Task<Result<Person>> Handle(AddNewPersonCommand request, CancellationToken cancellationToken)
   {
-    return await _addNewPersonService.AddNewPerson(request.Person);
+    var result = await _repository.AddAsync(request.Person);
+
+    return Result.Success(result);
   }
 }
