@@ -1,6 +1,8 @@
-﻿namespace Clean.RGP.Core.PersonAggregate;
+﻿using Ardalis.SharedKernel;
 
-public class LandProperty
+namespace Clean.RGP.Core.PersonAggregate;
+
+public class LandProperty : IAggregateRoot
 {
   public int LandPropertyId { get; set; }
   public string Name { get; set; } = string.Empty;

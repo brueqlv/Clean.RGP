@@ -1,5 +1,4 @@
 ﻿using Clean.RGP.Core.PersonAggregate;
-using Clean.RGP.UseCases.Contributors.List;
 using Clean.RGP.UseCases.People.Create;
 using Clean.RGP.UseCases.People.Delete;
 using Clean.RGP.UseCases.People.Get;
@@ -18,18 +17,18 @@ public class RGPController : Controller
     _mediator = mediator;
   }
 
-  public IActionResult Index()
+  public async Task<IActionResult> Index()
   {
-    var peopleList = _mediator.Send(new GetAllPeopleListQuery());
+    var peopleList = await _mediator.Send(new GetAllPeopleListQuery());
 
-    return View(peopleList.Result.Value);
+    return View(peopleList.Value);
   }
 
   public async Task<ActionResult> Details(int id)
   {
-    Person person = await _mediator.Send(new GetPersonByIdQuery(id));
+    var person = await _mediator.Send(new GetPersonByIdQuery(id));
 
-    return View(person);
+    return View(person.Value);
   }
 
   public ActionResult Create()
@@ -78,4 +77,18 @@ public class RGPController : Controller
 
     return RedirectToAction("Index");
   }
+
+  public async Task<ActionResult> PropertyList(int id)
+  {
+    var person = await _mediator.Send(new GetPersonByIdQuery(id));
+
+    return View(person.Value);
+  }
+
+  public async Task<IActionResult> PlotList(int propertyId)
+  {
+    var property = await _mediator.Send(new GetPropertyWithSortedLandTypesByIdQuery(propertyId));
+    return View(property.Value);
+  }
+
 }

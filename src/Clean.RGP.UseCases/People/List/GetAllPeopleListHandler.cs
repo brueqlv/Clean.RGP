@@ -1,8 +1,10 @@
 ﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
+using Ardalis.Specification;
 using Clean.RGP.Core.ContributorAggregate;
 using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
+using Clean.RGP.Core.PersonAggregate.Specifications;
 
 namespace Clean.RGP.UseCases.People.List;
 public class GetAllPeopleListHandler(IRepository<Person> _repository)
@@ -10,8 +12,9 @@ public class GetAllPeopleListHandler(IRepository<Person> _repository)
 {
   public async Task<Result<List<Person>>> Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken)
   {
-    var result = await _repository.ListAsync();
+    var spec = new PersonListSpec();
+    var result = await _repository.ListAsync(spec, cancellationToken);
 
-    return Result.Success(result);
+    return Result<List<Person>>.Success(result);
   }
 }

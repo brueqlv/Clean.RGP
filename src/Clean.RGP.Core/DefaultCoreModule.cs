@@ -13,8 +13,5 @@ public class DefaultCoreModule : Module
   {
     builder.RegisterType<DeleteContributorService>()
         .As<IDeleteContributorService>().InstancePerLifetimeScope();
-
-    builder.RegisterType<GetAllPeopleListService>()
-      .As<IGetAllPeopleListService>().InstancePerLifetimeScope();
   }
 }

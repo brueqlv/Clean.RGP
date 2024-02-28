@@ -2,14 +2,16 @@
 using Ardalis.SharedKernel;
 using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
+using Clean.RGP.Core.PersonAggregate.Specifications;
 
 namespace Clean.RGP.UseCases.People.Get;
-public class GetPersonByIdHandler(IGetPersonByIdService _getPersonByIdService)
+public class GetPersonByIdHandler(IRepository<Person> _repository)
   : IQueryHandler<GetPersonByIdQuery, Result<Person>>
 {
   public async Task<Result<Person>> Handle(GetPersonByIdQuery request, CancellationToken cancellationToken)
   {
-    var person = await _getPersonByIdService.GetPersonById(request.PersonId);
+    var spec = new PersonByIdSpec(request.PersonId);
+    var person = await _repository.FirstOrDefaultAsync(spec, cancellationToken);
 
     if (person == null)
     {

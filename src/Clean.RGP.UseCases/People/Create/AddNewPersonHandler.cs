@@ -9,7 +9,8 @@ public class AddNewPersonHandler(IRepository<Person> _repository)
 {
   public async Task<Result<Person>> Handle(AddNewPersonCommand request, CancellationToken cancellationToken)
   {
-    var result = await _repository.AddAsync(request.Person);
+    var result = await _repository.AddAsync(request.Person, cancellationToken);
+    await _repository.SaveChangesAsync(cancellationToken);
 
     return Result.Success(result);
   }
