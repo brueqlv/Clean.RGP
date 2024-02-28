@@ -6,8 +6,6 @@ using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
 using Clean.RGP.Core.Services;
 using Clean.RGP.Infrastructure.Data;
-using Clean.RGP.Infrastructure.Data.Queries;
-using Clean.RGP.Infrastructure.Email;
 using Clean.RGP.UseCases.Contributors.Create;
 using Clean.RGP.UseCases.Contributors.List;
 using MediatR;
@@ -87,9 +85,6 @@ public class AutofacInfrastructureModule : Module
 
   private void RegisterQueries(ContainerBuilder builder)
   {
-    builder.RegisterType<ListContributorsQueryService>()
-      .As<IListContributorsQueryService>()
-      .InstancePerLifetimeScope();
 
     //builder.RegisterType<AddNewPersonService>()
     //  .As<IAddNewPersonService>()
@@ -149,8 +144,6 @@ public class AutofacInfrastructureModule : Module
   private void RegisterDevelopmentOnlyDependencies(ContainerBuilder builder)
   {
     // NOTE: Add any development only services here
-    builder.RegisterType<FakeEmailSender>().As<IEmailSender>()
-      .InstancePerLifetimeScope();
 
     //builder.RegisterType<FakeListContributorsQueryService>()
     //  .As<IListContributorsQueryService>()
@@ -160,7 +153,6 @@ public class AutofacInfrastructureModule : Module
   private void RegisterProductionOnlyDependencies(ContainerBuilder builder)
   {
     // NOTE: Add any production only (real) services here
-    builder.RegisterType<SmtpEmailSender>().As<IEmailSender>()
-      .InstancePerLifetimeScope();
+
   }
 }

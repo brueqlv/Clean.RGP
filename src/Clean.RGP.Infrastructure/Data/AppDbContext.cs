@@ -15,8 +15,6 @@ public class AppDbContext : DbContext
   {
     _dispatcher = dispatcher;
   }
-
-  public DbSet<Contributor> Contributors => Set<Contributor>();
   public DbSet<Person> People => Set<Person>();
   public DbSet<LandProperty> LandProperties => Set<LandProperty>();
   public DbSet<Plot> Plots => Set<Plot>();
