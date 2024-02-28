@@ -4,6 +4,7 @@ using Clean.RGP.UseCases.People.Delete;
 using Clean.RGP.UseCases.People.Get;
 using Clean.RGP.UseCases.People.List;
 using Clean.RGP.UseCases.People.Update;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +12,12 @@ namespace Clean.RGP.Web.Controllers;
 public class RGPController : Controller
 {
   private readonly IMediator _mediator;
+  private readonly IValidator<Person> _personValidator;
 
-  public RGPController(IMediator mediator)
+  public RGPController(IMediator mediator, IValidator<Person> personValidator)
   {
     _mediator = mediator;
+    _personValidator = personValidator;
   }
 
   public async Task<IActionResult> Index()
@@ -40,11 +43,19 @@ public class RGPController : Controller
   [ValidateAntiForgeryToken]
   public async Task<ActionResult> Create(Person model)
   {
-    if (!ModelState.IsValid)
+    var validationResult = await _personValidator.ValidateAsync(model);
+
+    if (!validationResult.IsValid)
     {
+      foreach (var error in validationResult.Errors)
+      {
+        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+      }
+
       return View(model);
     }
 
+    // If validation succeeds, proceed with creating the person
     await _mediator.Send(new AddNewPersonCommand(model));
 
     return RedirectToAction("Index");
@@ -61,8 +72,15 @@ public class RGPController : Controller
   [ValidateAntiForgeryToken]
   public async Task<ActionResult> Edit(int id, Person person)
   {
-    if (!ModelState.IsValid)
+    var validationResult = await _personValidator.ValidateAsync(person);
+
+    if (!validationResult.IsValid)
     {
+      foreach (var error in validationResult.Errors)
+      {
+        ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+      }
+
       return View(person);
     }
 

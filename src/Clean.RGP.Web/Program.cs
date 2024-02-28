@@ -3,9 +3,12 @@ using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Clean.RGP.Core;
+using Clean.RGP.Core.PersonAggregate.Validators;
+using Clean.RGP.Core.PersonAggregate;
 using Clean.RGP.Infrastructure;
 using Clean.RGP.Infrastructure.Data;
 using FastEndpoints;
+using FluentValidation;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +18,11 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.UseSerilog((_, config) => config.ReadFrom.Configuration(builder.Configuration));
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IValidator<Person>, PersonValidator>();
+builder.Services.AddTransient<IValidator<LandProperty>, LandPropertyValidator>();
+builder.Services.AddTransient<IValidator<Plot>, PlotValidator>();
+builder.Services.AddTransient<IValidator<LandType>, LandTypeValidator>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
