@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using Ardalis.SharedKernel;
-using Clean.RGP.Core.ContributorAggregate;
 using Clean.RGP.Core.PersonAggregate;
 using Microsoft.EntityFrameworkCore;
 

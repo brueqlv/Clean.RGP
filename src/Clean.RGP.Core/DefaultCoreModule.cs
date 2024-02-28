@@ -1,6 +1,4 @@
 ﻿using Autofac;
-using Clean.RGP.Core.Interfaces;
-using Clean.RGP.Core.Services;
 
 namespace Clean.RGP.Core;
 
@@ -11,7 +9,5 @@ public class DefaultCoreModule : Module
 {
   protected override void Load(ContainerBuilder builder)
   {
-    builder.RegisterType<DeleteContributorService>()
-        .As<IDeleteContributorService>().InstancePerLifetimeScope();
   }
 }

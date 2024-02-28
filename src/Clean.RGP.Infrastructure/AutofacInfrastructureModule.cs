@@ -1,13 +1,9 @@
 ﻿using System.Reflection;
 using Ardalis.SharedKernel;
 using Autofac;
-using Clean.RGP.Core.ContributorAggregate;
-using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
-using Clean.RGP.Core.Services;
 using Clean.RGP.Infrastructure.Data;
-using Clean.RGP.UseCases.Contributors.Create;
-using Clean.RGP.UseCases.Contributors.List;
+using Clean.RGP.UseCases.People.Create;
 using MediatR;
 using MediatR.Pipeline;
 using Module = Autofac.Module;
@@ -40,9 +36,9 @@ public class AutofacInfrastructureModule : Module
   private void LoadAssemblies()
   {
     // TODO: Replace these types with any type in the appropriate assembly/project
-    var coreAssembly = Assembly.GetAssembly(typeof(Contributor));
+    var coreAssembly = Assembly.GetAssembly(typeof(Person));
     var infrastructureAssembly = Assembly.GetAssembly(typeof(AutofacInfrastructureModule));
-    var useCasesAssembly = Assembly.GetAssembly(typeof(CreateContributorCommand));
+    var useCasesAssembly = Assembly.GetAssembly(typeof(AddNewPersonCommand));
 
     var personAssembly = Assembly.GetAssembly(typeof(Person));
     var landPropertyAssembly = Assembly.GetAssembly(typeof(LandProperty));

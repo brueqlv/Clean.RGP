@@ -675,3 +675,526 @@ ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
 2024-02-28 13:30:51.614 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.4348ms
 2024-02-28 13:30:51.615 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 1622.4271ms
 2024-02-28 13:30:51.661 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.6415ms
+2024-02-28 13:31:51.080 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-28 13:31:51.243 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-28 13:31:51.245 +02:00 [INF] Hosting environment: Development
+2024-02-28 13:31:51.249 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-28 13:31:51.281 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:31:51.376 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-28 13:31:51.377 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:31:51.393 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:31:51.398 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:31:51.458 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:31:51.505 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 109.9735ms
+2024-02-28 13:31:51.509 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:31:51.509 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'MediatR.IRequestHandler`2[[Clean.RGP.UseCases.People.List.GetAllPeopleListQuery, Clean.RGP.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Ardalis.Result.Result`1[[System.Collections.Generic.List`1[[Clean.RGP.Core.PersonAggregate.Person, Clean.RGP.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Ardalis.Result, Version=7.2.0.0, Culture=neutral, PublicKeyToken=null]]' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+
+See https://autofac.rtfd.io/help/service-not-registered for more info.
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.Resolve(IComponentContext context, Type serviceType)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProvider.GetRequiredService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Index() in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-28 13:31:51.583 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 500 null text/html; charset=utf-8 306.6222ms
+2024-02-28 13:31:51.589 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:31:51.589 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:31:51.592 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.4129ms
+2024-02-28 13:31:51.621 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.3118ms
+2024-02-28 13:33:17.748 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-28 13:33:17.866 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-28 13:33:17.877 +02:00 [INF] Hosting environment: Development
+2024-02-28 13:33:17.877 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-28 13:33:17.906 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:33:18.011 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-28 13:33:18.013 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:33:18.034 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:33:18.042 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:33:18.055 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:33:18.638 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:33:18.638 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:33:18.961 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:33:19.258 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:33:19.360 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 1304 ms
+2024-02-28 13:33:19.364 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1318.1985ms.
+2024-02-28 13:33:19.374 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:33:19.434 +02:00 [INF] Executed ViewResult - view Index executed in 61.1241ms.
+2024-02-28 13:33:19.436 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 1401.4616ms
+2024-02-28 13:33:19.437 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:33:19.454 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:33:19.454 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:33:19.458 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 1556.5643ms
+2024-02-28 13:33:19.458 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.637ms
+2024-02-28 13:33:19.495 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.9185ms
+2024-02-28 13:33:39.911 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-28 13:33:40.031 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-28 13:33:40.037 +02:00 [INF] Hosting environment: Development
+2024-02-28 13:33:40.037 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-28 13:33:40.073 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:33:40.198 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-28 13:33:40.200 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:33:40.219 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:33:40.224 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:33:40.230 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:33:40.755 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:33:40.755 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:33:41.163 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:33:41.455 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:33:41.560 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 1329 ms
+2024-02-28 13:33:41.565 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1337.825ms.
+2024-02-28 13:33:41.575 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:33:41.640 +02:00 [INF] Executed ViewResult - view Index executed in 66.296ms.
+2024-02-28 13:33:41.642 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 1422.4182ms
+2024-02-28 13:33:41.642 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:33:41.655 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 1585.9236ms
+2024-02-28 13:33:41.681 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:33:41.681 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:33:41.685 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.5312ms
+2024-02-28 13:33:41.716 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.5544ms
+2024-02-28 13:34:07.088 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-28 13:34:07.223 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-28 13:34:07.224 +02:00 [INF] Hosting environment: Development
+2024-02-28 13:34:07.224 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-28 13:34:07.255 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:34:07.351 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-28 13:34:07.352 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:34:07.365 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:34:07.370 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:34:07.376 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:34:07.863 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:34:07.863 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:34:08.222 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:34:08.563 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:34:08.683 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 1306 ms
+2024-02-28 13:34:08.690 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1315.4911ms.
+2024-02-28 13:34:08.700 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:34:08.778 +02:00 [INF] Executed ViewResult - view Index executed in 79.7025ms.
+2024-02-28 13:34:08.780 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 1414.5453ms
+2024-02-28 13:34:08.781 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:34:08.798 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:34:08.798 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:34:08.803 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.658ms
+2024-02-28 13:34:08.812 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 1561.5571ms
+2024-02-28 13:34:08.841 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.2421ms
+2024-02-28 13:35:21.690 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-02-28 13:35:21.832 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-28 13:35:21.837 +02:00 [INF] Hosting environment: Development
+2024-02-28 13:35:21.837 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-02-28 13:35:21.867 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:35:21.982 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-02-28 13:35:21.983 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:22.002 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:22.007 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:22.015 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:35:22.618 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:35:22.619 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-28 13:35:23.063 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:35:23.420 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:23.542 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 1527 ms
+2024-02-28 13:35:23.550 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1537.1013ms.
+2024-02-28 13:35:23.564 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:35:23.674 +02:00 [INF] Executed ViewResult - view Index executed in 110.4403ms.
+2024-02-28 13:35:23.678 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 1675.4237ms
+2024-02-28 13:35:23.679 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:23.704 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 1841.4564ms
+2024-02-28 13:35:23.713 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:23.713 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:23.717 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 7.0893ms
+2024-02-28 13:35:23.772 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.36ms
+2024-02-28 13:35:25.757 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/Edit/3 - null null
+2024-02-28 13:35:25.768 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web)'
+2024-02-28 13:35:25.780 +02:00 [INF] Route matched with {action = "Edit", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:25.789 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:25.792 +02:00 [INF] Handling GetPersonByIdQuery
+2024-02-28 13:35:25.793 +02:00 [INF] Property PersonId : 3
+2024-02-28 13:35:25.886 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:35:25.941 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:25.946 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 152 ms
+2024-02-28 13:35:25.947 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 157.3046ms.
+2024-02-28 13:35:25.948 +02:00 [INF] Executing ViewResult, running view Edit.
+2024-02-28 13:35:26.402 +02:00 [INF] Executed ViewResult - view Edit executed in 455.0028ms.
+2024-02-28 13:35:26.403 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web) in 622.2789ms
+2024-02-28 13:35:26.403 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web)'
+2024-02-28 13:35:26.404 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/Edit/3 - 200 null text/html; charset=utf-8 646.7789ms
+2024-02-28 13:35:26.410 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - null null
+2024-02-28 13:35:26.415 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:26.415 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:26.417 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.6709ms
+2024-02-28 13:35:26.429 +02:00 [INF] The file /js/site.js was not modified
+2024-02-28 13:35:26.432 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - 304 null text/javascript 22.4811ms
+2024-02-28 13:35:26.450 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.482ms
+2024-02-28 13:35:28.261 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Edit/3 - application/x-www-form-urlencoded 1661
+2024-02-28 13:35:28.266 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web)'
+2024-02-28 13:35:28.279 +02:00 [INF] Route matched with {action = "Edit", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Edit(Int32, Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:28.317 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:28.320 +02:00 [INF] Handling EditPersonByIdCommand
+2024-02-28 13:35:28.320 +02:00 [INF] Property Id : 3
+2024-02-28 13:35:28.325 +02:00 [INF] Property Person : {"PersonId":3,"Name":"Edgars Varakļāns","PersonalCodeOrRegistrationNumber":"12345678901","PersonType":"Natural","LandProperties":[{"LandPropertyId":0,"Name":"Jaņogas","CadastralMark":32332323232,"Status":"HasPurchaseAgreement","Plots":[{"PlotId":0,"CadastralMark":34343434343,"TotalAreaInHectares":45.00,"DateOfSurvey":"2024-02-14T00:00:00.0000000","LandTypes":[{"LandTypeId":0,"Type":"ArableLand","AreaInHectares":21.00,"PlotId":0,"Plot":null,"$type":"LandType"},{"LandTypeId":0,"Type":"LandUnderFishPounds","AreaInHectares":12.00,"PlotId":0,"Plot":null,"$type":"LandType"},{"LandTypeId":0,"Type":"Meadow","AreaInHectares":1.00,"PlotId":0,"Plot":null,"$type":"LandType"},{"LandTypeId":0,"Type":"Swamp","AreaInHectares":3.00,"PlotId":0,"Plot":null,"$type":"LandType"}],"LandPropertyId":0,"LandProperty":null,"$type":"Plot"}],"PersonId":0,"Person":null,"$type":"LandProperty"}],"Id":3,"DomainEvents":[],"$type":"Person"}
+2024-02-28 13:35:28.350 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:28.613 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int64), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [LandTypes]
+OUTPUT 1
+WHERE [LandTypeId] = @p0;
+DELETE FROM [LandTypes]
+OUTPUT 1
+WHERE [LandTypeId] = @p1;
+DELETE FROM [LandTypes]
+OUTPUT 1
+WHERE [LandTypeId] = @p2;
+DELETE FROM [LandTypes]
+OUTPUT 1
+WHERE [LandTypeId] = @p3;
+DELETE FROM [Plots]
+OUTPUT 1
+WHERE [PlotId] = @p4;
+DELETE FROM [LandProperties]
+OUTPUT 1
+WHERE [LandPropertyId] = @p5;
+INSERT INTO [LandProperties] ([CadastralMark], [Name], [PersonId], [Status])
+OUTPUT INSERTED.[LandPropertyId]
+VALUES (@p6, @p7, @p8, @p9);
+2024-02-28 13:35:28.638 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p10='?' (DbType = Int64), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p13='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Plots] ([CadastralMark], [DateOfSurvey], [LandPropertyId], [TotalAreaInHectares])
+OUTPUT INSERTED.[PlotId]
+VALUES (@p10, @p11, @p12, @p13);
+2024-02-28 13:35:28.657 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p14='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p15='?' (DbType = Int32), @p16='?' (DbType = Int32), @p17='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p18='?' (DbType = Int32), @p19='?' (DbType = Int32), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [LandTypes] USING (
+VALUES (@p14, @p15, @p16, 0),
+(@p17, @p18, @p19, 1),
+(@p20, @p21, @p22, 2),
+(@p23, @p24, @p25, 3)) AS i ([AreaInHectares], [PlotId], [Type], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([AreaInHectares], [PlotId], [Type])
+VALUES (i.[AreaInHectares], i.[PlotId], i.[Type])
+OUTPUT INSERTED.[LandTypeId], i._Position;
+2024-02-28 13:35:28.685 +02:00 [INF] Handled EditPersonByIdCommand with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 354 ms
+2024-02-28 13:35:28.686 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 369.2011ms.
+2024-02-28 13:35:28.687 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2024-02-28 13:35:28.688 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web) in 409.1541ms
+2024-02-28 13:35:28.688 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Edit (Clean.RGP.Web)'
+2024-02-28 13:35:28.689 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Edit/3 - 302 null null 428.5147ms
+2024-02-28 13:35:28.691 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:35:28.693 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:28.694 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:28.694 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:28.694 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:35:28.699 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:28.701 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 6 ms
+2024-02-28 13:35:28.701 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.3843ms.
+2024-02-28 13:35:28.702 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:35:28.705 +02:00 [INF] Executed ViewResult - view Index executed in 3.1775ms.
+2024-02-28 13:35:28.705 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 11.0585ms
+2024-02-28 13:35:28.705 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:28.705 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 14.0117ms
+2024-02-28 13:35:28.712 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:28.715 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:28.717 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 2.159ms
+2024-02-28 13:35:28.725 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.3405ms
+2024-02-28 13:35:29.710 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/Details/3 - null null
+2024-02-28 13:35:29.713 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Details (Clean.RGP.Web)'
+2024-02-28 13:35:29.717 +02:00 [INF] Route matched with {action = "Details", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Details(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:29.717 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Details (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:29.718 +02:00 [INF] Handling GetPersonByIdQuery
+2024-02-28 13:35:29.719 +02:00 [INF] Property PersonId : 3
+2024-02-28 13:35:29.723 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:29.725 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 6 ms
+2024-02-28 13:35:29.725 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Details (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.6187ms.
+2024-02-28 13:35:29.726 +02:00 [INF] Executing ViewResult, running view Details.
+2024-02-28 13:35:29.733 +02:00 [INF] Executed ViewResult - view Details executed in 7.3322ms.
+2024-02-28 13:35:29.733 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Details (Clean.RGP.Web) in 15.6343ms
+2024-02-28 13:35:29.733 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Details (Clean.RGP.Web)'
+2024-02-28 13:35:29.733 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/Details/3 - 200 null text/html; charset=utf-8 23.0321ms
+2024-02-28 13:35:29.739 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:29.739 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:29.741 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 2.1521ms
+2024-02-28 13:35:29.760 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.4106ms
+2024-02-28 13:35:31.574 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:35:31.577 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:31.577 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:31.577 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:31.578 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:35:31.583 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:31.584 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 6 ms
+2024-02-28 13:35:31.585 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.1187ms.
+2024-02-28 13:35:31.585 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:35:31.587 +02:00 [INF] Executed ViewResult - view Index executed in 1.9689ms.
+2024-02-28 13:35:31.587 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 9.5888ms
+2024-02-28 13:35:31.587 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:31.587 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 13.4653ms
+2024-02-28 13:35:31.592 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:31.592 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:31.594 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.0299ms
+2024-02-28 13:35:31.607 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.2404ms
+2024-02-28 13:35:32.407 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - null null
+2024-02-28 13:35:32.410 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-02-28 13:35:32.413 +02:00 [INF] Route matched with {action = "PropertyList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] PropertyList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:32.413 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:32.414 +02:00 [INF] Handling GetPersonByIdQuery
+2024-02-28 13:35:32.414 +02:00 [INF] Property PersonId : 3
+2024-02-28 13:35:32.417 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:32.419 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 5 ms
+2024-02-28 13:35:32.419 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.4087ms.
+2024-02-28 13:35:32.421 +02:00 [INF] Executing ViewResult, running view PropertyList.
+2024-02-28 13:35:32.427 +02:00 [INF] Executed ViewResult - view PropertyList executed in 7.1708ms.
+2024-02-28 13:35:32.427 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) in 14.0413ms
+2024-02-28 13:35:32.427 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-02-28 13:35:32.427 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - 200 null text/html; charset=utf-8 19.9884ms
+2024-02-28 13:35:32.432 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:32.432 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:32.434 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.2208ms
+2024-02-28 13:35:32.446 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.4479ms
+2024-02-28 13:35:33.369 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PlotList?propertyId=19 - null null
+2024-02-28 13:35:33.372 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web)'
+2024-02-28 13:35:33.376 +02:00 [INF] Route matched with {action = "PlotList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlotList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:33.381 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:33.383 +02:00 [INF] Handling GetPropertyWithSortedLandTypesByIdQuery
+2024-02-28 13:35:33.383 +02:00 [INF] Property LandPropertyId : 19
+2024-02-28 13:35:33.403 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-02-28 13:35:33.412 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[LandPropertyId], [t].[CadastralMark], [t].[Name], [t].[PersonId], [t].[Status], [t0].[PlotId], [t0].[CadastralMark], [t0].[DateOfSurvey], [t0].[LandPropertyId], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status]
+    FROM [LandProperties] AS [l]
+    WHERE [l].[LandPropertyId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PlotId], [p].[CadastralMark], [p].[DateOfSurvey], [p].[LandPropertyId], [p].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+    FROM [Plots] AS [p]
+    LEFT JOIN [LandTypes] AS [l0] ON [p].[PlotId] = [l0].[PlotId]
+) AS [t0] ON [t].[LandPropertyId] = [t0].[LandPropertyId]
+ORDER BY [t].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:33.416 +02:00 [INF] Handled GetPropertyWithSortedLandTypesByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.LandProperty] in 32 ms
+2024-02-28 13:35:33.416 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 35.019ms.
+2024-02-28 13:35:33.417 +02:00 [INF] Executing ViewResult, running view PlotList.
+2024-02-28 13:35:33.421 +02:00 [INF] Executed ViewResult - view PlotList executed in 4.6955ms.
+2024-02-28 13:35:33.421 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web) in 44.4728ms
+2024-02-28 13:35:33.421 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web)'
+2024-02-28 13:35:33.421 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PlotList?propertyId=19 - 200 null text/html; charset=utf-8 52.5158ms
+2024-02-28 13:35:33.427 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:33.431 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:33.434 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 2.2169ms
+2024-02-28 13:35:33.439 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.9651ms
+2024-02-28 13:35:34.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - null null
+2024-02-28 13:35:34.561 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-02-28 13:35:34.561 +02:00 [INF] Route matched with {action = "PropertyList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] PropertyList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:34.561 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:34.562 +02:00 [INF] Handling GetPersonByIdQuery
+2024-02-28 13:35:34.562 +02:00 [INF] Property PersonId : 3
+2024-02-28 13:35:34.586 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:34.587 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 24 ms
+2024-02-28 13:35:34.587 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 25.2457ms.
+2024-02-28 13:35:34.587 +02:00 [INF] Executing ViewResult, running view PropertyList.
+2024-02-28 13:35:34.588 +02:00 [INF] Executed ViewResult - view PropertyList executed in 1.462ms.
+2024-02-28 13:35:34.588 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) in 27.2354ms
+2024-02-28 13:35:34.589 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-02-28 13:35:34.589 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - 200 null text/html; charset=utf-8 31.2463ms
+2024-02-28 13:35:34.594 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:34.594 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:34.596 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.1411ms
+2024-02-28 13:35:34.612 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8699ms
+2024-02-28 13:35:35.398 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-02-28 13:35:35.401 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:35.401 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-02-28 13:35:35.401 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-02-28 13:35:35.401 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-02-28 13:35:35.419 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-02-28 13:35:35.420 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 18 ms
+2024-02-28 13:35:35.420 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 18.5409ms.
+2024-02-28 13:35:35.420 +02:00 [INF] Executing ViewResult, running view Index.
+2024-02-28 13:35:35.422 +02:00 [INF] Executed ViewResult - view Index executed in 1.6061ms.
+2024-02-28 13:35:35.422 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 20.5055ms
+2024-02-28 13:35:35.422 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-02-28 13:35:35.422 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 24.2522ms
+2024-02-28 13:35:35.427 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-02-28 13:35:35.427 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-28 13:35:35.429 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.1202ms
+2024-02-28 13:35:35.436 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.2306ms
