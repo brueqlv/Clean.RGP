@@ -6,8 +6,6 @@ using Clean.RGP.Core;
 using Clean.RGP.Infrastructure;
 using Clean.RGP.Infrastructure.Data;
 using FastEndpoints;
-using FastEndpoints.Swagger;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,11 +26,6 @@ string? connectionString = builder.Configuration.GetConnectionString("SqlServerC
 Guard.Against.Null(connectionString);
 builder.Services.AddApplicationDbContext(connectionString);
 
-builder.Services.AddFastEndpoints();
-builder.Services.SwaggerDocument(o =>
-{
-  o.ShortSchemaNames = true;
-});
 
 // add list services for diagnostic purposes - see https://github.com/ardalis/AspNetCoreStartupServices
 builder.Services.Configure<ServiceConfig>(config =>
@@ -53,6 +46,10 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 var app = builder.Build();
 app.UseStaticFiles();
 
+app.MapControllerRoute(
+  name: "default",
+  pattern: "{controller=RGP}/{action=Index}/{id?}");
+
 if (app.Environment.IsDevelopment())
 {
   app.UseDeveloperExceptionPage();
@@ -64,37 +61,9 @@ else
   app.UseHsts();
 }
 
-app.MapControllerRoute(
-  name: "default",
-  pattern: "{controller=RGP}/{action=Index}/{id?}");
-
-app.UseFastEndpoints();
-app.UseSwaggerGen(); // FastEndpoints middleware
-
 app.UseHttpsRedirection();
 
-SeedDatabase(app);
-
 app.Run();
-
-static void SeedDatabase(WebApplication app)
-{
-  using var scope = app.Services.CreateScope();
-  var services = scope.ServiceProvider;
-
-  try
-  {
-    var context = services.GetRequiredService<AppDbContext>();
-    //               context.Database.Migrate();
-    context.Database.EnsureCreated();
-    SeedData.Initialize(services);
-  }
-  catch (Exception ex)
-  {
-    var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
-  }
-}
 
 // Make the implicit Program.cs class public, so integration tests can reference the correct assembly for host building
 public partial class Program
