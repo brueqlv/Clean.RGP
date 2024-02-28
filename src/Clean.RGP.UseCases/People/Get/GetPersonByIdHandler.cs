@@ -1,6 +1,5 @@
 ﻿using Ardalis.Result;
 using Ardalis.SharedKernel;
-using Clean.RGP.Core.Interfaces;
 using Clean.RGP.Core.PersonAggregate;
 using Clean.RGP.Core.PersonAggregate.Specifications;
 

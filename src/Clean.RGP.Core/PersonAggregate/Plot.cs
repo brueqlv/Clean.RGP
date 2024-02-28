@@ -6,7 +6,7 @@ public class Plot
   public long CadastralMark { get; set; }
   public decimal TotalAreaInHectares { get; set; }
   public DateTime DateOfSurvey { get; set; }
-  public List<LandType>? LandTypes { get; set; }
+  public List<LandType> LandTypes { get; set; } = new List<LandType>();
   public int LandPropertyId { get; set; }
   public LandProperty? LandProperty { get; set; }
 }

@@ -90,5 +90,4 @@ public class RGPController : Controller
     var property = await _mediator.Send(new GetPropertyWithSortedLandTypesByIdQuery(propertyId));
     return View(property.Value);
   }
-
 }
