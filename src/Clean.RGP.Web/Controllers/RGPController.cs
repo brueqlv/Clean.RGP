@@ -55,7 +55,6 @@ public class RGPController : Controller
       return View(model);
     }
 
-    // If validation succeeds, proceed with creating the person
     await _mediator.Send(new AddNewPersonCommand(model));
 
     return RedirectToAction("Index");
@@ -106,6 +105,7 @@ public class RGPController : Controller
   public async Task<IActionResult> PlotList(int propertyId)
   {
     var property = await _mediator.Send(new GetPropertyWithSortedLandTypesByIdQuery(propertyId));
+
     return View(property.Value);
   }
 }
