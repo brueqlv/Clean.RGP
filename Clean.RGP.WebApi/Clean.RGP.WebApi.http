@@ -1,6 +1,0 @@
-@Clean.RGP.WebApi_HostAddress = http://localhost:5155
-
-GET {{Clean.RGP.WebApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
