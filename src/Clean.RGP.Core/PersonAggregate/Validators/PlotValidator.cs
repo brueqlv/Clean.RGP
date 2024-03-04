@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Clean.RGP.Core.PersonAggregate.Resources;
+using FluentValidation;
 
 namespace Clean.RGP.Core.PersonAggregate.Validators;
 public class PlotValidator : AbstractValidator<Plot>
@@ -7,20 +8,20 @@ public class PlotValidator : AbstractValidator<Plot>
   {
     RuleFor(p => p.CadastralMark)
       .Must(ValidationHelpers.Be11Digits)
-      .WithMessage("Kadastra numuram jāsastāv no 11 cipariem.");
+      .WithMessage(ValidationMessages.CadastralMarkValidationMessage);
 
     RuleFor(p => p.TotalAreaInHectares)
       .NotEmpty()
       .GreaterThan(0)
-      .WithMessage("Zemes gabala kopplatībai jābūt lielākai par 0.")
+      .WithMessage(ValidationMessages.PlotTotalAreaBiggerThanZerroValidationMessage)
       .Must((plot, totalArea) => plot.LandTypes == null || plot.LandTypes.Sum(lt => lt.AreaInHectares) <= totalArea)
-      .WithMessage("Zemes gabala kopplatībai jābūt lielakai par zemes lietojumu platību summu.");
+      .WithMessage(ValidationMessages.PlotLandTypesAreaSumValidationMessage);
 
     RuleFor(p => p.DateOfSurvey)
       .Must(ValidationHelpers.BeAValidDate)
-      .WithMessage("Uzmērīšanas datumam jābūt validam.")
+      .WithMessage(ValidationMessages.PlotSurveyDateValidationMessage)
       .Must(ValidationHelpers.BeInThePast)
-      .WithMessage("Uzmērīšanas datums nevar būt nākotnē.");
+      .WithMessage(ValidationMessages.PlotSurveyDateInPastValidationMessage);
 
     When(p => p.LandTypes != null && p.LandTypes.Any(), () =>
     {

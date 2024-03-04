@@ -10,6 +10,7 @@ using Clean.RGP.Infrastructure.Data;
 using FastEndpoints;
 using FluentValidation;
 using Serilog;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +53,11 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 });
 
 var app = builder.Build();
+
+var culture = new CultureInfo("lv-LV");
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
+
 app.UseStaticFiles();
 
 app.MapControllerRoute(

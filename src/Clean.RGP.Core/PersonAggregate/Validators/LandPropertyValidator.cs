@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Clean.RGP.Core.PersonAggregate.Resources;
+using FluentValidation;
 using FluentValidation.Validators;
 
 namespace Clean.RGP.Core.PersonAggregate.Validators;
@@ -8,15 +9,15 @@ public class LandPropertyValidator : AbstractValidator<LandProperty>
   {
     RuleFor(lp => lp.CadastralMark)
       .Must(ValidationHelpers.Be11Digits)
-      .WithMessage("Kadastra numuram jāsastāv no 11 cipariem.");
+      .WithMessage(ValidationMessages.CadastralMarkValidationMessage);
 
     RuleFor(lp => lp.Status)
       .IsInEnum()
-      .WithMessage("Nekorekts status.");
+      .WithMessage(ValidationMessages.LandPropertyStatusValidationMessage);
 
     RuleFor(lp => lp.Plots)
       .NotEmpty()
-      .WithMessage("Zemes īpašumam jabūt vismaz vienam zemes gabalam.");
+      .WithMessage(ValidationMessages.LandPropertyPlotsNotEmptyValidationMessage);
 
     When(lp => lp.Plots.Any(), () =>
     {
