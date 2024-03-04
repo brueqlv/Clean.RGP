@@ -1,9 +1,9 @@
 ﻿using Ardalis.Specification;
 
 namespace Clean.RGP.Core.PersonAggregate.Specifications;
-public class PersonByIdSpec : Specification<Person>
+public class PersonWithLandPropertiesByPersonIdSpecification : Specification<Person>
 {
-  public PersonByIdSpec(int id)
+  public PersonWithLandPropertiesByPersonIdSpecification(int id)
   {
     Query
       .Where(p => p.PersonId == id)

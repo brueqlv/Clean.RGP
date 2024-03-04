@@ -9,7 +9,7 @@ public class DeletePersonByIdHandler(IRepository<Person> _repository)
 {
   public async Task<Result> Handle(DeletePersonByIdCommand request, CancellationToken cancellationToken)
   {
-    var spec = new PersonByIdSpec(request.PersonId);
+    var spec = new PersonWithLandPropertiesByPersonIdSpecification(request.PersonId);
     var personToDelete = await _repository.FirstOrDefaultAsync(spec, cancellationToken);
 
     if (personToDelete!= null)

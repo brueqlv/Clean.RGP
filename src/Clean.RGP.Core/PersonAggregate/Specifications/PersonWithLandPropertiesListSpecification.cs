@@ -1,9 +1,9 @@
 ﻿using Ardalis.Specification;
 
 namespace Clean.RGP.Core.PersonAggregate.Specifications;
-public class PersonListSpec : Specification<Person>
+public class PersonWithLandPropertiesListSpecification : Specification<Person>
 {
-  public PersonListSpec()
+  public PersonWithLandPropertiesListSpecification()
   {
     Query
       .Include(people => people.LandProperties)
