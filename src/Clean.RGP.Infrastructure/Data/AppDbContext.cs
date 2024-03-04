@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Ardalis.SharedKernel;
 using Clean.RGP.Core.PersonAggregate;
+using Clean.RGP.Infrastructure.Data.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace Clean.RGP.Infrastructure.Data;
@@ -24,27 +25,9 @@ public class AppDbContext : DbContext
     base.OnModelCreating(modelBuilder);
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-    modelBuilder.Entity<Person>()
-      .HasKey(p => p.PersonId);
-
-    modelBuilder.Entity<Person>()
-      .HasMany(p => p.LandProperties)
-      .WithOne(lp => lp.Person)
-      .HasForeignKey(lp => lp.PersonId)
-      .OnDelete(DeleteBehavior.Cascade);
-
-
-    modelBuilder.Entity<LandProperty>()
-      .HasMany(lp => lp.Plots)
-      .WithOne(plot => plot.LandProperty)
-      .HasForeignKey(plot => plot.LandPropertyId)
-      .OnDelete(DeleteBehavior.Cascade);
-
-    modelBuilder.Entity<Plot>()
-      .HasMany(plot => plot.LandTypes)
-      .WithOne(landType => landType.Plot)
-      .HasForeignKey(landType => landType.PlotId)
-      .OnDelete(DeleteBehavior.Cascade);
+    modelBuilder.ApplyConfiguration(new PersonConfiguration());
+    modelBuilder.ApplyConfiguration(new LandPropertyConfiguration());
+    modelBuilder.ApplyConfiguration(new PlotConfiguration());
   }
 
   public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
