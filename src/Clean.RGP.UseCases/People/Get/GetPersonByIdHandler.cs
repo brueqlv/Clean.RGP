@@ -9,7 +9,7 @@ public class GetPersonByIdHandler(IRepository<Person> _repository)
 {
   public async Task<Result<Person>> Handle(GetPersonByIdQuery request, CancellationToken cancellationToken)
   {
-    var spec = new PersonByIdSpec(request.PersonId);
+    var spec = new PersonWithLandPropertiesByPersonIdSpecification(request.PersonId);
     var person = await _repository.FirstOrDefaultAsync(spec, cancellationToken);
 
     if (person == null)

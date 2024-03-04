@@ -10,7 +10,7 @@ public class GetPropertyWithSortedLandTypesByIdHandler(IRepository<LandProperty>
 {
   public async Task<Result<LandProperty>> Handle(GetPropertyWithSortedLandTypesByIdQuery request, CancellationToken cancellationToken)
   {
-    var spec = new LandPropertyByIdSpec(request.LandPropertyId);
+    var spec = new LandPropertyWithPlotsByLandPropertyIdSpecification(request.LandPropertyId);
     var landProperty = await _repository.FirstOrDefaultAsync(spec, cancellationToken);
 
     if (landProperty != null && landProperty.Plots != null)

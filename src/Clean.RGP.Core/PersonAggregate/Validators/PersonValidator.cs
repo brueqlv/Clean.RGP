@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Clean.RGP.Core.PersonAggregate.Resources;
+using FluentValidation;
 
 namespace Clean.RGP.Core.PersonAggregate.Validators;
 public class PersonValidator : AbstractValidator<Person>
@@ -7,11 +8,11 @@ public class PersonValidator : AbstractValidator<Person>
   {
     RuleFor(p => p.PersonType)
       .IsInEnum()
-      .WithMessage("Nekorekts personas tips.");
+      .WithMessage(ValidationMessages.PersonTypeValidationMessage);
 
     RuleFor(p => p.LandProperties)
       .NotEmpty()
-      .WithMessage("Personai jābūt vismaz vienam zemes īpašumam.");
+      .WithMessage(ValidationMessages.PersonLandPropertiesNotEmptyValidationMessage);
 
     When(p => p.LandProperties.Any(), () =>
     {

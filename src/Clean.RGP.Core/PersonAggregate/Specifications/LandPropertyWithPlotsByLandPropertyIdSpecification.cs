@@ -1,9 +1,9 @@
 ﻿using Ardalis.Specification;
 
 namespace Clean.RGP.Core.PersonAggregate.Specifications;
-public class LandPropertyByIdSpec : Specification<LandProperty>
+public class LandPropertyWithPlotsByLandPropertyIdSpecification : Specification<LandProperty>
 {
-  public LandPropertyByIdSpec(int id)
+  public LandPropertyWithPlotsByLandPropertyIdSpecification(int id)
   {
     Query
       .Include(p => p.Plots)

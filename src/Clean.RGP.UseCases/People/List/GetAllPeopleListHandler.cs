@@ -9,7 +9,7 @@ public class GetAllPeopleListHandler(IRepository<Person> _repository)
 {
   public async Task<Result<List<Person>>> Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken)
   {
-    var spec = new PersonListSpec();
+    var spec = new PersonWithLandPropertiesListSpecification();
     var result = await _repository.ListAsync(spec, cancellationToken);
 
     return Result<List<Person>>.Success(result);

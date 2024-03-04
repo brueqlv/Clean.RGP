@@ -1,0 +1,855 @@
+2024-03-04 16:17:30.425 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 16:17:30.728 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 16:17:30.728 +02:00 [INF] Hosting environment: Development
+2024-03-04 16:17:30.728 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 16:17:31.002 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 16:17:31.251 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 16:17:31.254 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 16:17:31.281 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 16:17:31.334 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 16:17:31.345 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 16:17:32.130 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 16:17:32.130 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 16:17:32.619 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 16:17:49.542 +02:00 [ERR] An error occurred using the connection to database 'CleanRGP' on server 'GundarsPC'.
+2024-03-04 16:17:49.557 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 16:17:49.665 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 18381.2903ms
+2024-03-04 16:17:49.668 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 16:17:49.670 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.ListAsync(ISpecification`1 specification, CancellationToken cancellationToken)
+   at Clean.RGP.UseCases.People.List.GetAllPeopleListHandler.Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken) in C:\Users\gunda\Clean.RGP\src\Clean.RGP.UseCases\People\List\GetAllPeopleListHandler.cs:line 13
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Index() in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 16:17:49.771 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 500 null text/html; charset=utf-8 18777.1898ms
+2024-03-04 16:17:49.801 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 16:17:49.801 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 16:17:49.806 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.911ms
+2024-03-04 16:17:49.859 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.7129ms
+2024-03-04 16:18:07.347 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 16:18:07.470 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 16:18:07.471 +02:00 [INF] Hosting environment: Development
+2024-03-04 16:18:07.475 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 16:18:07.503 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 16:18:07.604 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 16:18:07.606 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 16:18:07.619 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 16:18:07.654 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 16:18:07.661 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 16:18:08.203 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 16:18:08.204 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 16:18:08.534 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 16:18:25.167 +02:00 [ERR] An error occurred using the connection to database 'CleanRGP' on server 'GundarsPC'.
+2024-03-04 16:18:25.182 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 16:18:25.278 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 17655.1071ms
+2024-03-04 16:18:25.281 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 16:18:25.283 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.ListAsync(ISpecification`1 specification, CancellationToken cancellationToken)
+   at Clean.RGP.UseCases.People.List.GetAllPeopleListHandler.Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken) in C:\Users\gunda\Clean.RGP\src\Clean.RGP.UseCases\People\List\GetAllPeopleListHandler.cs:line 13
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Index() in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 16:18:25.337 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 500 null text/html; charset=utf-8 17838.6138ms
+2024-03-04 16:18:25.339 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 16:18:25.344 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 16:18:25.347 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 7.5762ms
+2024-03-04 16:18:25.412 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.3295ms
+2024-03-04 17:00:43.971 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 17:00:44.096 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 17:00:44.100 +02:00 [INF] Hosting environment: Development
+2024-03-04 17:00:44.104 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 17:00:44.136 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 17:00:44.237 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 17:00:44.239 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:00:44.255 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:00:44.333 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:00:44.341 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 17:00:44.817 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:00:44.817 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:00:45.170 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 17:01:01.778 +02:00 [ERR] An error occurred using the connection to database 'CleanRGP' on server 'GundarsPC'.
+2024-03-04 17:01:01.791 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 17:01:01.883 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 17624.325ms
+2024-03-04 17:01:01.886 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:01:01.887 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.ListAsync(ISpecification`1 specification, CancellationToken cancellationToken)
+   at Clean.RGP.UseCases.People.List.GetAllPeopleListHandler.Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken) in C:\Users\gunda\Clean.RGP\src\Clean.RGP.UseCases\People\List\GetAllPeopleListHandler.cs:line 13
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Index() in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 17:01:01.979 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 500 null text/html; charset=utf-8 17849.378ms
+2024-03-04 17:01:02.035 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:01:02.039 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:01:02.044 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.2071ms
+2024-03-04 17:01:02.092 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.8875ms
+2024-03-04 17:01:38.871 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 17:01:39.001 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 17:01:39.006 +02:00 [INF] Hosting environment: Development
+2024-03-04 17:01:39.006 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 17:01:39.034 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 17:01:39.138 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 17:01:39.140 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:01:39.156 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:01:39.194 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:01:39.201 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 17:01:39.684 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:01:39.684 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:01:40.027 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 17:01:56.689 +02:00 [ERR] An error occurred using the connection to database 'CleanRGP' on server 'GundarsPC'.
+2024-03-04 17:01:56.709 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Clean.RGP.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 17:01:56.799 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 17640.9651ms
+2024-03-04 17:01:56.802 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:01:56.804 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): The system cannot find the file specified.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Ardalis.Specification.EntityFrameworkCore.RepositoryBase`1.ListAsync(ISpecification`1 specification, CancellationToken cancellationToken)
+   at Clean.RGP.UseCases.People.List.GetAllPeopleListHandler.Handle(GetAllPeopleListQuery request, CancellationToken cancellationToken) in C:\Users\gunda\Clean.RGP\src\Clean.RGP.UseCases\People\List\GetAllPeopleListHandler.cs:line 13
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at Clean.RGP.Web.Controllers.RGPController.Index() in C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web\Controllers\RGPController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
+2024-03-04 17:01:56.874 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:01:56.874 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:01:56.878 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 500 null text/html; charset=utf-8 17850.0209ms
+2024-03-04 17:01:56.878 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 2.9185ms
+2024-03-04 17:01:56.927 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.7615ms
+2024-03-04 17:04:06.955 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 17:04:07.086 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 17:04:07.087 +02:00 [INF] Hosting environment: Development
+2024-03-04 17:04:07.087 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 17:04:07.117 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 17:04:07.222 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 17:04:07.224 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:04:07.240 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:04:07.285 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:04:07.291 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 17:04:07.805 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:04:07.806 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 17:04:08.173 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 17:04:08.718 +02:00 [INF] Executed DbCommand (130ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 17:04:08.922 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 1630 ms
+2024-03-04 17:04:08.931 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1640.9297ms.
+2024-03-04 17:04:08.959 +02:00 [INF] Executing ViewResult, running view Index.
+2024-03-04 17:04:09.121 +02:00 [INF] Executed ViewResult - view Index executed in 169.127ms.
+2024-03-04 17:04:09.138 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-03-04 17:04:09.139 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - null null
+2024-03-04 17:04:09.142 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - null null
+2024-03-04 17:04:09.143 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-03-04 17:04:09.151 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 1909.3698ms
+2024-03-04 17:04:09.152 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 17:04:09.160 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2024-03-04 17:04:09.160 +02:00 [INF] The file /css/site.css was not modified
+2024-03-04 17:04:09.160 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2024-03-04 17:04:09.160 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2024-03-04 17:04:09.175 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:04:09.184 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:04:09.195 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/css/site.css?v=AKvNjO3dCPPS0eSU1Ez8T2wI280i08yGycV9ndytL-c - 304 null text/css 55.5515ms
+2024-03-04 17:04:09.195 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 61.396ms
+2024-03-04 17:04:09.195 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 51.9087ms
+2024-03-04 17:04:09.195 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery/dist/jquery.min.js - 304 null text/javascript 55.5378ms
+2024-03-04 17:04:09.195 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 19.8288ms
+2024-03-04 17:04:09.211 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 2098.5048ms
+2024-03-04 17:04:09.257 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.012ms
+2024-03-04 17:04:12.917 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/Create - null null
+2024-03-04 17:04:12.926 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:12.930 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Create() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:04:12.932 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:04:12.933 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.478ms.
+2024-03-04 17:04:12.934 +02:00 [INF] Executing ViewResult, running view Create.
+2024-03-04 17:04:13.263 +02:00 [INF] Executed ViewResult - view Create executed in 329.6879ms.
+2024-03-04 17:04:13.263 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 333.3526ms
+2024-03-04 17:04:13.263 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:13.264 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 347.0944ms
+2024-03-04 17:04:13.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2024-03-04 17:04:13.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2024-03-04 17:04:13.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - null null
+2024-03-04 17:04:13.279 +02:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2024-03-04 17:04:13.279 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:04:13.280 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:04:13.280 +02:00 [INF] The file /js/site.js was not modified
+2024-03-04 17:04:13.280 +02:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2024-03-04 17:04:13.280 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 6.0468ms
+2024-03-04 17:04:13.280 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 6.1679ms
+2024-03-04 17:04:13.280 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/js/site.js?v=TSV-IWI_OU8ismnbKREJPqX17dXDLp5VQfXHmYljr-g - 304 null text/javascript 6.0931ms
+2024-03-04 17:04:13.281 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.1911ms
+2024-03-04 17:04:13.307 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.5788ms
+2024-03-04 17:04:17.973 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Create - application/x-www-form-urlencoded 261
+2024-03-04 17:04:17.978 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:18.000 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:04:18.036 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:04:18.069 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 32.4343ms.
+2024-03-04 17:04:18.069 +02:00 [INF] Executing ViewResult, running view Create.
+2024-03-04 17:04:18.075 +02:00 [INF] Executed ViewResult - view Create executed in 5.278ms.
+2024-03-04 17:04:18.075 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 74.8374ms
+2024-03-04 17:04:18.075 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:18.076 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 102.7303ms
+2024-03-04 17:04:18.083 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:04:18.084 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:04:18.085 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.9144ms
+2024-03-04 17:04:18.102 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.7548ms
+2024-03-04 17:04:28.971 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Create - application/x-www-form-urlencoded 364
+2024-03-04 17:04:28.975 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:28.975 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 17:04:28.984 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 17:04:29.003 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 19.2443ms.
+2024-03-04 17:04:29.003 +02:00 [INF] Executing ViewResult, running view Create.
+2024-03-04 17:04:29.026 +02:00 [INF] Executed ViewResult - view Create executed in 22.5531ms.
+2024-03-04 17:04:29.026 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 50.4414ms
+2024-03-04 17:04:29.026 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 17:04:29.027 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 55.4167ms
+2024-03-04 17:04:29.032 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 17:04:29.032 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 17:04:29.033 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.2527ms
+2024-03-04 17:04:29.047 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.3233ms
+2024-03-04 21:21:54.212 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:21:54.245 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:22:02.183 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:22:02.201 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:22:02.268 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:22:02.269 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:23:14.037 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:23:14.057 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:23:14.331 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-03-04 21:23:14.350 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-03-04 21:23:14.352 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-03-04 21:23:14.353 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-03-04 21:23:14.376 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-03-04 21:23:14.384 +02:00 [INF] Applying migration '20240304192202_Init'.
+2024-03-04 21:23:14.422 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Contributors];
+2024-03-04 21:23:14.427 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240304192202_Init', N'8.0.0');
+2024-03-04 21:23:31.514 +02:00 [INF] User profile is available. Using 'C:\Users\gunda\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-04 21:23:31.763 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-04 21:23:31.764 +02:00 [INF] Hosting environment: Development
+2024-03-04 21:23:31.764 +02:00 [INF] Content root path: C:\Users\gunda\Clean.RGP\src\Clean.RGP.Web
+2024-03-04 21:23:32.011 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 21:23:32.224 +02:00 [WRN] Failed to determine the https port for redirect.
+2024-03-04 21:23:32.226 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:23:32.246 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:32.319 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:32.329 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 21:23:32.975 +02:00 [WRN] No store type was specified for the decimal property 'AreaInHectares' on entity type 'LandType'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:23:32.976 +02:00 [WRN] No store type was specified for the decimal property 'TotalAreaInHectares' on entity type 'Plot'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-03-04 21:23:33.441 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 21:23:34.446 +02:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:23:34.567 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 2238 ms
+2024-03-04 21:23:34.571 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2249.1195ms.
+2024-03-04 21:23:34.584 +02:00 [INF] Executing ViewResult, running view Index.
+2024-03-04 21:23:34.689 +02:00 [INF] Executed ViewResult - view Index executed in 106.1245ms.
+2024-03-04 21:23:34.693 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 2446.5798ms
+2024-03-04 21:23:34.695 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:23:34.717 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 2712.956ms
+2024-03-04 21:23:34.739 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:34.739 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:34.744 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 4.8689ms
+2024-03-04 21:23:34.905 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 166.0318ms
+2024-03-04 21:23:38.816 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - null null
+2024-03-04 21:23:38.825 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-03-04 21:23:38.837 +02:00 [INF] Route matched with {action = "PropertyList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] PropertyList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:38.850 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:38.854 +02:00 [INF] Handling GetPersonByIdQuery
+2024-03-04 21:23:38.855 +02:00 [INF] Property PersonId : 3
+2024-03-04 21:23:38.931 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 21:23:38.988 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:23:38.991 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 135 ms
+2024-03-04 21:23:38.991 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 140.883ms.
+2024-03-04 21:23:38.993 +02:00 [INF] Executing ViewResult, running view PropertyList.
+2024-03-04 21:23:39.002 +02:00 [INF] Executed ViewResult - view PropertyList executed in 10.086ms.
+2024-03-04 21:23:39.002 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) in 165.014ms
+2024-03-04 21:23:39.002 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-03-04 21:23:39.003 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - 200 null text/html; charset=utf-8 186.9818ms
+2024-03-04 21:23:39.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:39.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:39.011 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.9018ms
+2024-03-04 21:23:39.018 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.5038ms
+2024-03-04 21:23:39.879 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PlotList?propertyId=23 - null null
+2024-03-04 21:23:39.884 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web)'
+2024-03-04 21:23:39.889 +02:00 [INF] Route matched with {action = "PlotList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlotList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:39.894 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:39.895 +02:00 [INF] Handling GetPropertyWithSortedLandTypesByIdQuery
+2024-03-04 21:23:39.895 +02:00 [INF] Property LandPropertyId : 23
+2024-03-04 21:23:39.926 +02:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-04 21:23:39.937 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[LandPropertyId], [t].[CadastralMark], [t].[Name], [t].[PersonId], [t].[Status], [t0].[PlotId], [t0].[CadastralMark], [t0].[DateOfSurvey], [t0].[LandPropertyId], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status]
+    FROM [LandProperties] AS [l]
+    WHERE [l].[LandPropertyId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PlotId], [p].[CadastralMark], [p].[DateOfSurvey], [p].[LandPropertyId], [p].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+    FROM [Plots] AS [p]
+    LEFT JOIN [LandTypes] AS [l0] ON [p].[PlotId] = [l0].[PlotId]
+) AS [t0] ON [t].[LandPropertyId] = [t0].[LandPropertyId]
+ORDER BY [t].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:23:39.942 +02:00 [INF] Handled GetPropertyWithSortedLandTypesByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.LandProperty] in 45 ms
+2024-03-04 21:23:39.942 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 48.4141ms.
+2024-03-04 21:23:39.943 +02:00 [INF] Executing ViewResult, running view PlotList.
+2024-03-04 21:23:39.955 +02:00 [INF] Executed ViewResult - view PlotList executed in 13.1646ms.
+2024-03-04 21:23:39.956 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web) in 66.7115ms
+2024-03-04 21:23:39.956 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PlotList (Clean.RGP.Web)'
+2024-03-04 21:23:39.956 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PlotList?propertyId=23 - 200 null text/html; charset=utf-8 77.5369ms
+2024-03-04 21:23:39.962 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:39.966 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:39.967 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 5.4901ms
+2024-03-04 21:23:39.983 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.5836ms
+2024-03-04 21:23:41.193 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - null null
+2024-03-04 21:23:41.196 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-03-04 21:23:41.196 +02:00 [INF] Route matched with {action = "PropertyList", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] PropertyList(Int32) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:41.197 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:41.197 +02:00 [INF] Handling GetPersonByIdQuery
+2024-03-04 21:23:41.198 +02:00 [INF] Property PersonId : 3
+2024-03-04 21:23:41.219 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PersonId], [t].[Id], [t].[Name], [t].[PersonType], [t].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM (
+    SELECT TOP(1) [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber]
+    FROM [People] AS [p]
+    WHERE [p].[PersonId] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t1].[PlotId], [t1].[CadastralMark] AS [CadastralMark0], [t1].[DateOfSurvey], [t1].[LandPropertyId] AS [LandPropertyId0], [t1].[TotalAreaInHectares], [t1].[LandTypeId], [t1].[AreaInHectares], [t1].[PlotId0], [t1].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t1] ON [l].[LandPropertyId] = [t1].[LandPropertyId]
+) AS [t0] ON [t].[PersonId] = [t0].[PersonId]
+ORDER BY [t].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:23:41.220 +02:00 [INF] Handled GetPersonByIdQuery with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 22 ms
+2024-03-04 21:23:41.221 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 23.3545ms.
+2024-03-04 21:23:41.221 +02:00 [INF] Executing ViewResult, running view PropertyList.
+2024-03-04 21:23:41.222 +02:00 [INF] Executed ViewResult - view PropertyList executed in 1.4614ms.
+2024-03-04 21:23:41.223 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web) in 26.6114ms
+2024-03-04 21:23:41.223 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.PropertyList (Clean.RGP.Web)'
+2024-03-04 21:23:41.224 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/PropertyList/3 - 200 null text/html; charset=utf-8 30.3188ms
+2024-03-04 21:23:41.229 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:41.235 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:41.235 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 6.2628ms
+2024-03-04 21:23:41.253 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.2998ms
+2024-03-04 21:23:41.849 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 21:23:41.852 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:23:41.852 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:41.853 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:41.853 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 21:23:41.873 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:23:41.874 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 20 ms
+2024-03-04 21:23:41.874 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 20.877ms.
+2024-03-04 21:23:41.874 +02:00 [INF] Executing ViewResult, running view Index.
+2024-03-04 21:23:41.876 +02:00 [INF] Executed ViewResult - view Index executed in 1.5804ms.
+2024-03-04 21:23:41.876 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 23.2861ms
+2024-03-04 21:23:41.876 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:23:41.876 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 27.4203ms
+2024-03-04 21:23:41.882 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:41.882 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:41.883 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.3692ms
+2024-03-04 21:23:41.890 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.4646ms
+2024-03-04 21:23:45.526 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/RGP/Create - null null
+2024-03-04 21:23:45.528 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:23:45.530 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Create() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:45.531 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:45.531 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4564ms.
+2024-03-04 21:23:45.533 +02:00 [INF] Executing ViewResult, running view Create.
+2024-03-04 21:23:45.839 +02:00 [INF] Executed ViewResult - view Create executed in 307.5621ms.
+2024-03-04 21:23:45.839 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 308.7887ms
+2024-03-04 21:23:45.839 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:23:45.839 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 313.3759ms
+2024-03-04 21:23:45.846 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:45.847 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 1.0781ms
+2024-03-04 21:23:45.848 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:45.871 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.8415ms
+2024-03-04 21:23:53.777 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Create - application/x-www-form-urlencoded 364
+2024-03-04 21:23:53.781 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:23:53.798 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:23:53.833 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:23:53.884 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 50.1392ms.
+2024-03-04 21:23:53.884 +02:00 [INF] Executing ViewResult, running view Create.
+2024-03-04 21:23:53.906 +02:00 [INF] Executed ViewResult - view Create executed in 21.8889ms.
+2024-03-04 21:23:53.906 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 107.9431ms
+2024-03-04 21:23:53.906 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:23:53.906 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Create - 200 null text/html; charset=utf-8 128.9078ms
+2024-03-04 21:23:53.912 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:23:53.916 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:23:53.918 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 2.0193ms
+2024-03-04 21:23:53.924 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.0692ms
+2024-03-04 21:24:11.777 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:57678/RGP/Create - application/x-www-form-urlencoded 597
+2024-03-04 21:24:11.780 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:24:11.780 +02:00 [INF] Route matched with {action = "Create", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Create(Clean.RGP.Core.PersonAggregate.Person) on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:24:11.793 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:24:11.808 +02:00 [INF] Handling AddNewPersonCommand
+2024-03-04 21:24:11.811 +02:00 [INF] Property Person : {"PersonId":0,"Name":"Gundars Eimanis","PersonalCodeOrRegistrationNumber":"12345678901","PersonType":"Natural","LandProperties":[{"LandPropertyId":0,"Name":"sdf","CadastralMark":33334343432,"Status":"HasPurchaseAgreement","Plots":[{"PlotId":0,"CadastralMark":12345432123,"TotalAreaInHectares":12,"DateOfSurvey":"2024-03-03T00:00:00.0000000","LandTypes":[],"LandPropertyId":0,"LandProperty":null,"$type":"Plot"}],"PersonId":0,"Person":null,"$type":"LandProperty"}],"Id":0,"DomainEvents":[],"$type":"Person"}
+2024-03-04 21:24:11.982 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [People] ([Id], [Name], [PersonType], [PersonalCodeOrRegistrationNumber])
+OUTPUT INSERTED.[PersonId]
+VALUES (@p0, @p1, @p2, @p3);
+2024-03-04 21:24:12.011 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p4='?' (DbType = Int64), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LandProperties] ([CadastralMark], [Name], [PersonId], [Status])
+OUTPUT INSERTED.[LandPropertyId]
+VALUES (@p4, @p5, @p6, @p7);
+2024-03-04 21:24:12.023 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p8='?' (DbType = Int64), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Plots] ([CadastralMark], [DateOfSurvey], [LandPropertyId], [TotalAreaInHectares])
+OUTPUT INSERTED.[PlotId]
+VALUES (@p8, @p9, @p10, @p11);
+2024-03-04 21:24:12.049 +02:00 [INF] Handled AddNewPersonCommand with Ardalis.Result.Result`1[Clean.RGP.Core.PersonAggregate.Person] in 232 ms
+2024-03-04 21:24:12.049 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 256.7708ms.
+2024-03-04 21:24:12.050 +02:00 [INF] Executing RedirectResult, redirecting to /.
+2024-03-04 21:24:12.050 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web) in 270.2607ms
+2024-03-04 21:24:12.051 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Create (Clean.RGP.Web)'
+2024-03-04 21:24:12.052 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:57678/RGP/Create - 302 null null 274.9793ms
+2024-03-04 21:24:12.054 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/ - null null
+2024-03-04 21:24:12.056 +02:00 [INF] Executing endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:24:12.056 +02:00 [INF] Route matched with {action = "Index", controller = "RGP"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Clean.RGP.Web.Controllers.RGPController (Clean.RGP.Web).
+2024-03-04 21:24:12.057 +02:00 [INF] Executing action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) - Validation state: "Valid"
+2024-03-04 21:24:12.057 +02:00 [INF] Handling GetAllPeopleListQuery
+2024-03-04 21:24:12.081 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Id], [p].[Name], [p].[PersonType], [p].[PersonalCodeOrRegistrationNumber], [t0].[LandPropertyId], [t0].[CadastralMark], [t0].[Name], [t0].[PersonId], [t0].[Status], [t0].[PlotId], [t0].[CadastralMark0], [t0].[DateOfSurvey], [t0].[LandPropertyId0], [t0].[TotalAreaInHectares], [t0].[LandTypeId], [t0].[AreaInHectares], [t0].[PlotId0], [t0].[Type]
+FROM [People] AS [p]
+LEFT JOIN (
+    SELECT [l].[LandPropertyId], [l].[CadastralMark], [l].[Name], [l].[PersonId], [l].[Status], [t].[PlotId], [t].[CadastralMark] AS [CadastralMark0], [t].[DateOfSurvey], [t].[LandPropertyId] AS [LandPropertyId0], [t].[TotalAreaInHectares], [t].[LandTypeId], [t].[AreaInHectares], [t].[PlotId0], [t].[Type]
+    FROM [LandProperties] AS [l]
+    LEFT JOIN (
+        SELECT [p0].[PlotId], [p0].[CadastralMark], [p0].[DateOfSurvey], [p0].[LandPropertyId], [p0].[TotalAreaInHectares], [l0].[LandTypeId], [l0].[AreaInHectares], [l0].[PlotId] AS [PlotId0], [l0].[Type]
+        FROM [Plots] AS [p0]
+        LEFT JOIN [LandTypes] AS [l0] ON [p0].[PlotId] = [l0].[PlotId]
+    ) AS [t] ON [l].[LandPropertyId] = [t].[LandPropertyId]
+) AS [t0] ON [p].[PersonId] = [t0].[PersonId]
+ORDER BY [p].[PersonId], [t0].[LandPropertyId], [t0].[PlotId]
+2024-03-04 21:24:12.082 +02:00 [INF] Handled GetAllPeopleListQuery with Ardalis.Result.Result`1[System.Collections.Generic.List`1[Clean.RGP.Core.PersonAggregate.Person]] in 25 ms
+2024-03-04 21:24:12.082 +02:00 [INF] Executed action method Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 25.5925ms.
+2024-03-04 21:24:12.083 +02:00 [INF] Executing ViewResult, running view Index.
+2024-03-04 21:24:12.085 +02:00 [INF] Executed ViewResult - view Index executed in 2.0428ms.
+2024-03-04 21:24:12.085 +02:00 [INF] Executed action Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web) in 28.362ms
+2024-03-04 21:24:12.085 +02:00 [INF] Executed endpoint 'Clean.RGP.Web.Controllers.RGPController.Index (Clean.RGP.Web)'
+2024-03-04 21:24:12.085 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/ - 200 null text/html; charset=utf-8 31.1066ms
+2024-03-04 21:24:12.091 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-04 21:24:12.094 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2024-03-04 21:24:12.094 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 3.5557ms
+2024-03-04 21:24:12.102 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.1079ms
