@@ -1,0 +1,158 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using Clean.RGP.Core.Enums
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Clean.RGP.Core.PersonAggregate.Person
+
+@{
+    var landProperties = Model?.LandProperties ?? new List<LandProperty>();
+}
+
+<div class="person">
+
+    <div class="form-group">
+        <label asp-for="Name">Vārds, uzvārds / Kompanijas nosaukums</label>
+        <input asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PersonalCodeOrRegistrationNumber">Personas kods / Reģistrācijas numurs</label>
+        <input asp-for="PersonalCodeOrRegistrationNumber" class="form-control" required />
+        <span asp-validation-for="PersonalCodeOrRegistrationNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PersonType">Personas tips</label>
+        @{
+            var personTypeEnumValues = Enum.GetValues(typeof(Enums.PersonTypeEnum))
+            .Cast<Enums.PersonTypeEnum>()
+            .Select(e => new SelectListItem
+            {
+                Text = e.GetDescription(),
+                Value = ((int)e).ToString()
+            });
+        }
+        @Html.DropDownListFor(model => model.PersonType, new SelectList(personTypeEnumValues, "Value", "Text", Model?.PersonType), new { @class = "form-control" })
+        <span asp-validation-for="PersonType" class="text-danger"></span>
+        <span asp-validation-for="LandProperties" class="text-danger"></span>
+    </div>
+
+    <button type="button" class="btn btn-secondary" id="add-property">Pievienot zemes īpašumu</button>
+
+    <div id="property-list" class="list">
+        @if (landProperties != null)
+        {
+            for (int i = 0; i < landProperties.Count; i++)
+            {
+                if (landProperties[i] != null)
+                {
+                    <div class="property-entry">
+                        <div class="form-group">
+                            <label asp-for="@landProperties[i].Name">Īpašuma nosaukums</label>
+                            <input asp-for="@landProperties[i].Name" class="form-control" required />
+                            <span asp-validation-for="@landProperties[i].Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="@landProperties[i].CadastralMark">Kadastra numurs</label>
+                            <input asp-for="@landProperties[i].CadastralMark" class="form-control" required />
+                            <span asp-validation-for="@landProperties[i].CadastralMark" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="@landProperties[i].Status">Status</label>
+                            @{
+                                var statusEnumValues = Enum.GetValues(typeof(Enums.PropertyStatusEnum))
+                                .Cast<Enums.PropertyStatusEnum>()
+                                .Select(e => new SelectListItem
+                        {
+                            Text = e.GetDescription(),
+                            Value = ((int)e).ToString()
+                        });
+                            }
+                            @Html.DropDownListFor(model => landProperties[i].Status, new SelectList(statusEnumValues, "Value", "Text", landProperties[i].Status), new { @class = "form-control" })
+                            <span asp-validation-for="@landProperties[i].Status" class="text-danger"></span>
+                            <span asp-validation-for="@landProperties[i].Plots" class="text-danger"></span>
+                        </div>
+
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeEntry(this)">Remove</button>
+                        <button type="button" class="btn btn-secondary" onclick="addPlot(this)">Pievienot zemes gabalu</button>
+
+                        <div id="plot-list-@i" class="list plot-list">
+                            @if (landProperties[i].Plots != null)
+                            {
+                                string today = DateTime.Today.ToString("yyyy-MM-dd");
+                                for (int j = 0; j < landProperties[i].Plots.Count; j++)
+                                {
+                                    if (landProperties[i].Plots[j] != null)
+                                    {
+                                        <div class="plot-entry">
+                                            <div class="form-group">
+                                                <label asp-for="@landProperties[i].Plots[j].CadastralMark">Kadastra numurs</label>
+                                                <input asp-for="@landProperties[i].Plots[j].CadastralMark" class="form-control" required />
+                                                <span asp-validation-for="@landProperties[i].Plots[j].CadastralMark" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label asp-for="@landProperties[i].Plots[j].TotalAreaInHectares">Kopplatība hektāros</label>
+                                                <input type="number" step="0.01" min="0" asp-for="@landProperties[i].Plots[j].TotalAreaInHectares" class="form-control" required />
+                                                <span asp-validation-for="@landProperties[i].Plots[j].TotalAreaInHectares" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label asp-for="@landProperties[i].Plots[j].DateOfSurvey">Uzmērīšanas datums</label>
+                                                <input asp-for="@landProperties[i].Plots[j].DateOfSurvey" type="date" class="form-control date-input" max="@today" required />
+                                                <span asp-validation-for="@landProperties[i].Plots[j].DateOfSurvey" class="text-danger"></span>
+                                                <span asp-validation-for="@landProperties[i].Plots[j].LandTypes" class="text-danger"></span>
+                                            </div>
+
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="removeEntry(this)">Remove</button>
+                                            <button type="button" class="btn btn-secondary" onclick="addLandType(this)">Pievienot zemes lietojumu</button>
+
+                                            <div id="land-type-list-@i-@j" class="list land-type-list">
+                                                @if (landProperties[i].Plots[j].LandTypes != null)
+                                                {
+                                                    for (int k = 0; k < landProperties[i].Plots[j].LandTypes.Count; k++)
+                                                    {
+                                                        if (landProperties[i].Plots[j].LandTypes[k] != null)
+                                                        {
+                                                            <div class="type-entry">
+                                                                <div class="form-group">
+                                                                    <label asp-for="@landProperties[i].Plots[j].LandTypes[k].Type">Lietojums</label>
+                                                                    @{
+                                                                        var landTypeEnumValues = Enum.GetValues(typeof(Enums.LandTypeEnum))
+                                                                        .Cast<Enums.LandTypeEnum>()
+                                                                        .Select(e => new SelectListItem
+                                                {
+                                                    Text = e.GetDescription(),
+                                                    Value = ((int)e).ToString()
+                                                });
+                                                                    }
+                                                                    @Html.DropDownListFor(model => landProperties[i].Plots[j].LandTypes[k].Type, new SelectList(landTypeEnumValues, "Value", "Text", landProperties[i].Plots[j].LandTypes[k].Type), new { @class = "form-control" })
+                                                                    <span asp-validation-for="@landProperties[i].Plots[j].LandTypes[k].Type" class="text-danger"></span>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label asp-for="@landProperties[i].Plots[j].LandTypes[k].AreaInHectares">Platība hektāros</label>
+                                                                    <input type="number" step="0.01" min="0" asp-for="@landProperties[i].Plots[j].LandTypes[k].AreaInHectares" class="form-control" required />
+                                                                    <span asp-validation-for="@landProperties[i].Plots[j].LandTypes[k].AreaInHectares" class="text-danger"></span>
+                                                                </div>
+
+                                                                <button type="button" class="btn btn-danger btn-sm" onclick="removeEntry(this)">Remove</button>
+                                                            </div>
+                                                        }
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

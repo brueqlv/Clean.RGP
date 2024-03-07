@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Clean.RGP.Core.Enums
+
+@model Clean.RGP.Core.PersonAggregate.Person
+@{
+    ViewData["Title"] = "PropertyList";
+}
+
+<h1>@Model.Name zemes īpašumu saraksts.</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Īpašums:
+        </th>
+        <th>
+            Kadastra numurs:
+        </th>
+        <th>
+            Status:
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.LandProperties.Any())
+        {
+            foreach (var property in Model.LandProperties)
+            {
+                <tr>
+                    <td>
+                        @property.Name
+                    </td>
+                    <td>
+                        @property.CadastralMark
+                    </td>
+                    <td>
+                        @EnumExtensions.GetDescription(property.Status)
+                    </td>
+                    <td>
+                        <a asp-action="PlotList" class="btn btn-info" asp-route-propertyId="@property.LandPropertyId">Zemes gabalu saraksts</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Atpakaļ uz personu sarakstu</a>
+</div>

@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Newtonsoft.Json
+@using Clean.RGP.Core.Enums
+
+@model Clean.RGP.Core.PersonAggregate.Person
+
+@{
+    ViewData["Title"] = "Create";
+    var landTypeOptions = EnumExtensions.GetValuesAndDescriptions<Enums.LandTypeEnum>();
+    var propertyStatusOptions = EnumExtensions.GetValuesAndDescriptions<Enums.PropertyStatusEnum>();
+    var personTypeOptions = EnumExtensions.GetValuesAndDescriptions<Enums.PersonTypeEnum>();
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md">
+        <form id="form" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @await Html.PartialAsync("_rgpForm", Model)
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" /> |
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        const landTypeList = @Html.Raw(JsonConvert.SerializeObject(landTypeOptions));
+        const propertyStatusList = @Html.Raw(JsonConvert.SerializeObject(propertyStatusOptions));
+        const personTypeList = @Html.Raw(JsonConvert.SerializeObject(personTypeOptions));
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

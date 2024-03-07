@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Clean.RGP.Core.Enums
+
+@model Clean.RGP.Core.PersonAggregate.LandProperty
+
+@{
+    ViewData["Title"] = Model.Name + " īpašuma zemes gabalu saraksts";
+}
+
+<h1>@Model.Name īpašuma zemes gabalu saraksts</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Kadastra numurs:</th>
+        <th>Platība hektāros:</th>
+        <th>Uzmērīšanas datums:</th>
+        <th>Sadalījums pa zemes lietojumiem:</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var plot in Model.Plots)
+    {
+        <tr>
+            <td>@plot.CadastralMark</td>
+            <td>@plot.TotalAreaInHectares</td>
+            <td>@plot.DateOfSurvey.ToString("yyyy-MM-dd")</td>
+            <td>
+                @if (plot.LandTypes != null)
+                {
+                    foreach (LandType lt in plot.LandTypes)
+                    {
+                        <p>@lt.Type.GetDescription() - @lt.AreaInHectares ha</p>
+                    }
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="PropertyList" class="btn btn-primary" asp-route-id="@Model.PersonId">Atpakaļ uz zemes īpašumu sarakstu</a>
+</div>
